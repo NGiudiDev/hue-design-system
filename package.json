@@ -1,5 +1,5 @@
 {
-  "name": "ngiudi-hue-ds",
+  "name": "@ngiudidev/hue-ds",
   "version": "0.0.1",
   "description": "Design System implemented in React",
   "main": "./dist/index.js",
