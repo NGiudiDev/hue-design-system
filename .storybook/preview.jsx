@@ -14,10 +14,9 @@ const preview = {
       </ThemeProvider>
     ),
   ],
+
   parameters: {
-    backgrounds: {
-      default: "light",
-    },
+    backgrounds: {},
     controls: {
       matchers: {
        color: /(background|color)$/i,
@@ -31,6 +30,12 @@ const preview = {
       },
     },
   },
+
+  initialGlobals: {
+    backgrounds: {
+      value: "light"
+    }
+  }
 };
 
 export default preview;
