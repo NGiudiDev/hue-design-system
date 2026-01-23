@@ -7,7 +7,9 @@ import { Styles } from "./Divider.styles";
 
 const DEFAULT_PROPS = {
   color: "black.surface",
+  height: 1,
   margin: "a-0",
+  orientation: "horizontal",
 };
 
 export const Divider = (props) => {
@@ -16,12 +18,16 @@ export const Divider = (props) => {
   return (
     <Styles.Divider 
       $color={attrs.color}
+      $height={attrs.height}
       $margin={attrs.margin}
+      $orientation={attrs.orientation}
     />
   );
 };
 
 Divider.propTypes = {
   color: PropTypes.string,
+  height: PropTypes.number,
   margin: PropTypes.string,
+  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
 };
