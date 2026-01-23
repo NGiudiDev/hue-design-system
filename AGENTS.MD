@@ -1,8 +1,8 @@
-# AGENTS.MD - Guía de Desarrollo para @ngiudidev/hue-ds
+# AGENTS.MD - Guía de Desarrollo para hue-design-system
 
 ## 📋 Información General
 
-Este documento contiene las reglas de programación, convenciones y guías para desarrolladores que trabajen en el Design System **@ngiudidev/hue-ds**. Todas las reglas han sido deducidas del análisis del código existente y deben ser seguidas para mantener la consistencia del proyecto.
+Este documento contiene las reglas de programación, convenciones y guías para desarrolladores que trabajen en el Design System **hue-design-system**. Todas las reglas han sido deducidas del análisis del código existente y deben ser seguidas para mantener la consistencia del proyecto.
 
 **Última actualización**: Octubre 2025
 
