@@ -1,4 +1,4 @@
-import{m as x,p as l,a as u,l as m,j as p,P as e}from"./iframe-BfEVEUym.js";const v=u("div")`    
+import{m as x,p as l,a as u,l as m,j as p,P as e}from"./iframe-BZJsol1c.js";const v=u("div")`    
   box-sizing: border-box;
   text-align: ${a=>a.$align};
   

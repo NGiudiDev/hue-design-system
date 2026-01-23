@@ -1,4 +1,4 @@
-import{m,r as p,a as c,l as d,i as u,j as s,P as i}from"./iframe-BfEVEUym.js";import{g as f}from"./Text-Zkta_WuU.js";const r={minor:"20px",major:"24px",spot:"36px"},t={minor:"16px",major:"20px",spot:"32px"},$=c("svg")`
+import{m,r as p,a as c,l as d,i as u,j as s,P as i}from"./iframe-BZJsol1c.js";import{g as f}from"./Text-CRCib6v8.js";const r={minor:"20px",major:"24px",spot:"36px"},t={minor:"16px",major:"20px",spot:"32px"},$=c("svg")`
   height: ${e=>t[e.$size]};
   width: ${e=>t[e.$size]};
   fill: ${e=>f(e.theme.colors,e.$color)||e.theme.colors.black.main};
