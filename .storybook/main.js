@@ -13,7 +13,13 @@ const config = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  "viteFinal": async (config) => {
+    return {
+      ...config,
+      base: "/ngiudi-hue-ds/",
+    };
+  },
 };
 
 export default config;
