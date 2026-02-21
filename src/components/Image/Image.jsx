@@ -5,7 +5,7 @@ import { Icon } from "../Icon/Icon";
 
 import { Styles } from "./Image.styles";
 
-import { SIZE_HEIGHTS, SIZE_WIDTHS } from "./internal/image.consts";
+import { getDimentions } from "./internal/image.utils";
 
 export const Image = (props) => {
   const {
@@ -20,25 +20,6 @@ export const Image = (props) => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [showFallback, setShowFallback] = useState(!src);
-
-  const getDimentions = (shape, size, width, height) => {
-    let _height = height;
-    let _width = width;
-    
-    if (height === 0 || width === 0) {
-      _height = SIZE_HEIGHTS[size];
-      _width = SIZE_WIDTHS[size];
-    }
-
-    if (shape === "circle") {
-      _height = _width;
-    }
-
-    return {
-      height: _height,
-      width: _width,
-    };
-  };
 
   const dimentions = getDimentions(shape, size, width, height);
 
