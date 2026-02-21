@@ -27,7 +27,7 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-  title: "Components/Box",
+  title: "Layout/Box",
 };
 
 // Playground interactivo para probar todas las props

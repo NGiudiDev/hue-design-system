@@ -4,7 +4,7 @@ import { marginProperties, paddingProperties } from "../../utils/spacing";
 import { getColorValue } from "../../utils/colors";
 
 /**
- * Common text styles applied to both TextWrapper and LabelWrapper
+ * common text styles applied to both TextWrapper and LabelWrapper
  */
 const textStyles = (props) => {
   const typographyVariant = props.theme.typography[props.$type] || props.theme.typography.bodyRegular;

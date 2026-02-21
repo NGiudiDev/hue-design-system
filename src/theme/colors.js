@@ -1,6 +1,6 @@
 export const colors = {
   black: {
-    border: "#CFCFCF",            // #0F0F0F 20% sobre blanco
+    border: "#CFCFCF",              // #0F0F0F 20% sobre blanco
     darkPressed: "#161616",
     disabled: "#0F0F0F61",          // #0F0F0F 38% sobre blanco
     dragged: "#F0F0F014",           // #0F0F0F 8% sobre blanco

@@ -28,7 +28,7 @@ const meta = {
     },
   },
   tags: ["autodocs"],
-  title: "Components/Grid",
+  title: "Layout/Grid",
 };
 
 // Playground interactivo para probar el Grid

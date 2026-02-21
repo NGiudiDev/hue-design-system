@@ -1,5 +1,5 @@
 /**
- * Resolves color value from theme colors or returns the color as-is
+ * resolves color value from theme colors or returns the color as-is
  * @param {string} color - Color key from theme or direct color value
  * @returns {string} - Resolved color value
  */

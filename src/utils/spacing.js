@@ -1,7 +1,6 @@
 /**
  * receives a string in a specific format and transforms it into CSS
  * properties.
- *
  * @param {string} spacingString string with spacing values.
  * @param {string} type spacing type.
  * @return {string} spacing css code.
@@ -41,7 +40,6 @@ const handleSpacing = (spacingString, type) => {
 
 /**
  * receives a string in a specific format and transforms it into CSS margins.
- *
  * @param {string} props components properties.
  * @param {string} defaultValue used if margin property is not received.
  * @return {string} string with margin values.
@@ -58,7 +56,6 @@ export const marginProperties = (props, defaultValue) => {
 
 /**
  * receives a string in a specific format and transforms it into CSS paddings.
- *
  * @param {string} props components properties.
  * @param {string} defaultValue used if padding property is not received.
  * @return {string} string with padding values.
