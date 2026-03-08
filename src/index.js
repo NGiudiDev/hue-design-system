@@ -1,6 +1,6 @@
 /******************************************************************/
 /*                                                                */
-/*  ## Como actualizar el deploy en githup pages?                */
+/*  ## Como actualizar el deploy en githup pages?                 */
 /*                                                                */
 /*    1. El siguiente comando va a crear el build y va a          */
 /*    publicar la pagina.                                         */
@@ -10,7 +10,7 @@
 /*    2. Si en consola vemos el mensaje `Publish`, se ha          */
 /*    publicado con exito la pagina.                              */
 /*                                                                */
-/*  ## Como publicar en npm?                                     */
+/*  ## Como publicar en npm?                                      */
 /*                                                                */
 /*    1. Actualizar la version en el package json, si no se hace  */
 /*    esto, va a fallar al momento de intentar publicar en npm.   */
@@ -22,6 +22,42 @@
 /*    3. Publicar el nuevo paquete                                */
 /*                                                                */
 /*      npm publish                                               */
+/*                                                                */
+/*  ## Componentes a desarrollar...                               */
+/*                                                                */
+/*    1. Banner                                                   */
+/*    2. Breadcrumbs                                              */
+/*    3. Carrousel                                                */
+/*    4. Checkbox                                                 */
+/*    5. Collapse                                                 */
+/*    6. Dropdown                                                 */
+/*    7. Dropzone                                                 */
+/*    8. Filter                                                   */
+/*    9. Flex                                                     */
+/*   10. FloatButton                                              */
+/*   11. Hero                                                     */
+/*   12. Input                                                    */
+/*   13. Map                                                      */
+/*   14. Modal                                                    */
+/*   15. Paginate                                                 */
+/*   16. Panel                                                    */
+/*   17. PhoneInput                                               */
+/*   18. ProgressBar                                              */
+/*   19. Radio                                                    */
+/*   20. Search                                                   */
+/*   21. Select                                                   */
+/*   22. Stack                                                    */
+/*   23. Status                                                   */
+/*   24. StatusProgress                                           */
+/*   25. Steps                                                    */
+/*   26. Table                                                    */
+/*   27. Tabs                                                     */
+/*   28. Text                                                     */
+/*   29. Time                                                     */
+/*   30. Timeline                                                 */
+/*   31. Tooltip                                                  */
+/*   32. UpdatedFile                                              */
+/*   33. RatingInput                                              */
 /*                                                                */
 /******************************************************************/
 
