@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text } from "../../../../Text/Text";
-
 import { isPasswordType } from "../../utils/input.utils";
 
 import { Styles } from "./InputSuffix.styles";
@@ -28,9 +26,13 @@ export const InputSuffix = (props) => {
       );
     case "text":
       return (
-        <Text color={disabled ? "black.disabled" : "black.mediumEmphasis"} type="bodyRegular">
+        <Styles.CustomText
+          color={disabled ? "black.disabled" : "black.mediumEmphasis"}
+          disabled={disabled}
+          margin="l-4"
+        >
           {text}
-        </Text>
+        </Styles.CustomText>
       );
     default:
       return null;

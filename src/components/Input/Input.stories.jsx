@@ -33,10 +33,8 @@ export const Playground = {
     onChange: () => {},
     padding: "a-0",
     prefix: {
-      icon: {
-        name: "search",
-      },
-      type: "icon",
+      text: "AR$",
+      type: "text",
     },
     suffix: {
       icon: {

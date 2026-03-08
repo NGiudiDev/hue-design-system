@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Text } from "../../../../Text/Text";
-
 import { Styles } from "./InputPrefix.styles";
 
 export const InputPrefix = (props) => {
@@ -20,9 +18,13 @@ export const InputPrefix = (props) => {
       );
     case "text":
       return (
-        <Text color={disabled ? "black.disabled" : "black.mediumEmphasis"} type="bodyRegular">
+        <Styles.CustomText
+          color={disabled ? "black.disabled" : "black.mediumEmphasis"}
+          disabled={disabled}
+          margin="r-4"
+        >
           {text}
-        </Text>
+        </Styles.CustomText>
       );
     default:
       return null;

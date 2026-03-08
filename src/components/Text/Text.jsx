@@ -10,6 +10,7 @@ import { typography } from "../../theme/typography";
 const DEFAULT_PROPS = {
   align: "start",
   as: "p",
+  className: "",
   color: "black",
   decoration: "none",
   htmlFor: "",
@@ -32,6 +33,7 @@ export const Text = (props) => {
   const textOptions = {
     $align: attrs.align,
     children: attrs.children,
+    className: attrs.className,
     $color: attrs.color,
     $decoration: attrs.decoration,
     $margin: attrs.margin,
@@ -55,6 +57,7 @@ Text.propTypes = {
   align: PropTypes.oneOf(["start", "center", "end"]),
   as: PropTypes.oneOf(["p", "span", "label", "h1", "h2", "h3", "h4", "h5", "h6"]),
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   color: PropTypes.string,
   decoration: PropTypes.oneOf(["none", "underline", "line-through"]),
   htmlFor: PropTypes.string,
