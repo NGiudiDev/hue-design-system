@@ -13,7 +13,6 @@ import { Styles } from "./InputText.styles";
 export const InputText = (props) => {
   const {
     disabled,
-    icon,
     error,
     helpText,
     id,
@@ -23,6 +22,8 @@ export const InputText = (props) => {
     name,
     onChange,
     padding,
+    prefix,
+    suffix,
     type = "text",
     value,
   } = props;
@@ -47,7 +48,12 @@ export const InputText = (props) => {
       )}
 
       <Styles.InputWrapper disabled={disabled} $error={error}>
-        <InputPrefix disabled={disabled} icon={icon} />
+        <InputPrefix
+          disabled={disabled}
+          icon={prefix?.icon}
+          text={prefix?.text}
+          type={prefix?.type}
+        />
 
         <Styles.CustomInput
           disabled={disabled}
@@ -59,7 +65,14 @@ export const InputText = (props) => {
           value={value}
         />
 
-        <InputSuffix disabled={disabled} error={error} icon={icon} type={type} />
+        <InputSuffix
+          disabled={disabled}
+          error={error}
+          icon={suffix?.icon}
+          inputType={type}
+          text={suffix?.text}
+          type={suffix?.type}
+        />
       </Styles.InputWrapper>
 
       {error && (
@@ -87,6 +100,22 @@ InputText.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   padding: PropTypes.string,
+  prefix: PropTypes.shape({
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+    }),
+    text: PropTypes.string,
+    type: PropTypes.oneOf(["text", "icon"]).isRequired,
+  }),
+  suffix: PropTypes.shape({
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+    }),
+    text: PropTypes.string,
+    type: PropTypes.oneOf(["text", "icon"]).isRequired,
+  }),
   type: PropTypes.oneOf(["password", "text", "textPassword"]),
   value: PropTypes.any,
 };

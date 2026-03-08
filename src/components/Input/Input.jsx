@@ -6,20 +6,19 @@ import { useField } from "formik";
 import { InputText } from "./internal/components/InputText/InputText";
 import { InputPassword } from "./internal/components/InputPassword";
 
-//TODO: Eliminar la prop icon y agregar suffix/prefix. Agregar otros tipos de suffix y prefix
-//TODO: Agregar otros tipos de suffix y prefix como puede ser text.
 //TODO: Agregar un componente tipo NumberInput
 //TODO: Agregar un componente tipo TextArea
 export const Input = (props) => {  const {
     disabled,
     helpText,
-    icon,
     id,
     isOptional,
     label,
     margin = "a-0",
     name,
     padding = "a-0",
+    prefix = "",
+    suffix = "",
     type = "text",
   } = props;
 
@@ -39,6 +38,7 @@ export const Input = (props) => {  const {
           name={name}
           onChange={field.onChange}
           padding={padding}
+          prefix={prefix}
           value={field.value}
         />
       );
@@ -50,7 +50,6 @@ export const Input = (props) => {  const {
           disabled={disabled}
           error={meta.error}
           helpText={helpText}
-          icon={icon}
           id={id}
           isOptional={isOptional}
           label={label}
@@ -58,6 +57,8 @@ export const Input = (props) => {  const {
           name={name}
           onChange={field.onChange}
           padding={padding}
+          prefix={prefix}
+          suffix={suffix}
           value={field.value}
         />
       );
@@ -67,15 +68,27 @@ export const Input = (props) => {  const {
 Input.propTypes = {
   disabled: PropTypes.bool,
   helpText: PropTypes.string,
-  icon: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    position: PropTypes.oneOf(["start", "end"]).isRequired,
-  }),
   id: PropTypes.string,
   isOptional: PropTypes.bool,
   label: PropTypes.string,
   margin: PropTypes.string,
   name: PropTypes.string.isRequired,
   padding: PropTypes.string,
+  prefix: PropTypes.shape({
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+    }),
+    text: PropTypes.string,
+    type: PropTypes.oneOf(["text", "icon"]).isRequired,
+  }),
+  suffix: PropTypes.shape({
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+    }),
+    text: PropTypes.string,
+    type: PropTypes.oneOf(["text", "icon"]).isRequired,
+  }),
   type: PropTypes.oneOf(["password", "text"]),
 };

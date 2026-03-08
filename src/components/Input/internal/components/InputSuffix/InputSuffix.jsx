@@ -1,31 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Styles } from "./InputSuffix.styles";
+import { Text } from "../../../../Text/Text";
 
 import { isPasswordType } from "../../utils/input.utils";
 
+import { Styles } from "./InputSuffix.styles";
+
 export const InputSuffix = (props) => {
-  const { disabled, error, icon, type } = props;
+  const { disabled, error, icon, inputType, text, type } = props;
 
-  if (error && !isPasswordType(type)) {
-    return (
-      <Styles.CustomIcon color="error" name="error" size="minor" />
-    );
-  }
-  
-  if (icon && icon.position === "end") {
-    return (
-      <Styles.CustomIcon
-        disabled={disabled}
-        name={icon.name}
-        onClick={disabled ? null : icon.onClick}
-        size="minor"
-      />
-    );
-  }
+  switch (type) {
+    case "icon":
+      if (error && !isPasswordType(inputType)) {
+        return (
+          <Styles.CustomIcon color="error" name="error" size="minor" />
+        );
+      }
 
-  return null;
+      return (
+        <Styles.CustomIcon
+          disabled={disabled}
+          name={icon.name}
+          onClick={disabled ? null : icon.onClick}
+          size="minor"
+        />
+      );
+    case "text":
+      return (
+        <Text color={disabled ? "black.disabled" : "black.mediumEmphasis"} type="bodyRegular">
+          {text}
+        </Text>
+      );
+    default:
+      return null;
+  };
 };
 
 InputSuffix.propTypes = {
@@ -36,5 +45,7 @@ InputSuffix.propTypes = {
     onClick: PropTypes.func,
     position: PropTypes.oneOf(["start", "end"]).isRequired,
   }),
+  inputType: PropTypes.oneOf(["password", "text", "textPassword"]),
+  text: PropTypes.string,
   type: PropTypes.oneOf(["password", "text", "textPassword"]),
 };

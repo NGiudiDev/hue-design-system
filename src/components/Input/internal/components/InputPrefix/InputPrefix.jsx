@@ -1,29 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Text } from "../../../../Text/Text";
+
 import { Styles } from "./InputPrefix.styles";
 
 export const InputPrefix = (props) => {
-  const { disabled, icon } = props;
+  const { disabled, icon, text, type } = props;
 
-  if (icon && icon.position === "start") {
-    return (
-      <Styles.CustomIcon
-        color={disabled ? "blackDisabled" : "blackMediumEmphasis"}
-        disabled={disabled}
-        name={icon.name}
-        size="minor"
-      />
-    );
-  }
-  
-  return null;
+  switch (type) {
+    case "icon":
+      return (
+        <Styles.CustomIcon
+          color={disabled ? "blackDisabled" : "blackMediumEmphasis"}
+          disabled={disabled}
+          name={icon.name}
+          size="minor"
+        />
+      );
+    case "text":
+      return (
+        <Text color={disabled ? "black.disabled" : "black.mediumEmphasis"} type="bodyRegular">
+          {text}
+        </Text>
+      );
+    default:
+      return null;
+  };
 };
 
 InputPrefix.propTypes = {
   disabled: PropTypes.bool,
   icon: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    position: PropTypes.oneOf(["start", "end"]).isRequired,
   }),
+  text: PropTypes.string,
+  type: PropTypes.oneOf(["icon", "text"]),
 };

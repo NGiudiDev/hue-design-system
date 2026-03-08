@@ -25,10 +25,6 @@ export const Playground = {
     disabled: false,
     error: null,
     helpText: "This is some help text.",
-    icon: {
-      name: "search",
-      position: "start",
-    },
     id: "id_del_input",
     isOptional: true,
     label: "Label",
@@ -36,7 +32,19 @@ export const Playground = {
     name: "input_name",
     onChange: () => {},
     padding: "a-0",
-    //type: "password",
+    prefix: {
+      icon: {
+        name: "search",
+      },
+      type: "icon",
+    },
+    suffix: {
+      icon: {
+        name: "search",
+      },
+      type: "icon",
+    },
+    type: "password",
   },
   render: (args) => (
     <>

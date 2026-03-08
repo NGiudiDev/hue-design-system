@@ -25,12 +25,14 @@ export const InputPassword = (props) => {
       disabled={disabled}
       error={error}
       helpText={helpText}
-      icon={{
-        name: showPassword ? "hide" : "view",
-        onClick: () => {
-          setShowPassword((prev) => !prev);
+      suffix={{
+        icon: {
+          name: showPassword ? "hide" : "view",
+          onClick: () => {
+            setShowPassword((prev) => !prev);
+          },
         },
-        position: "end",
+        type: "icon",
       }}
       id={id}
       isOptional={isOptional}
