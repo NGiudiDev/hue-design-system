@@ -10,7 +10,7 @@ export const InputPrefix = (props) => {
     case "icon":
       return (
         <Styles.CustomIcon
-          color={disabled ? "blackDisabled" : "blackMediumEmphasis"}
+          color={disabled ? "black.disabled" : "black.mediumEmphasis"}
           disabled={disabled}
           name={icon.name}
           size="minor"

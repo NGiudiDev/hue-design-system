@@ -31,7 +31,13 @@ export const InputText = (props) => {
   return (
     <Styles.Wrapper $margin={margin} $padding={padding}>
       {label && (
-        <Text color={disabled ? "black.disabled" : "black"} margin="b-4" type="bodySemibold">
+        <Text
+          as="label"
+          color={disabled ? "black.disabled" : "black"}
+          htmlFor={id}
+          margin="b-4"
+          type="bodySemibold"
+        >
           {label}
           {isOptional && (
             <Text as="span" color={disabled ? "black.disabled" : "black.mediumEmphasis"} type="captionRegular">
@@ -88,14 +94,9 @@ InputText.propTypes = {
   disabled: PropTypes.bool,
   error: PropTypes.string,
   helpText: PropTypes.string,
-  icon: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    onClick: PropTypes.func,
-    position: PropTypes.oneOf(["start", "end"]).isRequired,
-  }),
   id: PropTypes.string,
   isOptional: PropTypes.bool,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   margin: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,

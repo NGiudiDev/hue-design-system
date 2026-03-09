@@ -8,7 +8,8 @@ import { InputPassword } from "./internal/components/InputPassword";
 
 //TODO: Agregar un componente tipo NumberInput
 //TODO: Agregar un componente tipo TextArea
-export const Input = (props) => {  const {
+export const Input = (props) => {
+  const {
     disabled,
     helpText,
     id,
@@ -17,8 +18,8 @@ export const Input = (props) => {  const {
     margin = "a-0",
     name,
     padding = "a-0",
-    prefix = "",
-    suffix = "",
+    prefix = null,
+    suffix = null,
     type = "text",
   } = props;
 
@@ -68,7 +69,7 @@ export const Input = (props) => {  const {
 Input.propTypes = {
   disabled: PropTypes.bool,
   helpText: PropTypes.string,
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   isOptional: PropTypes.bool,
   label: PropTypes.string,
   margin: PropTypes.string,

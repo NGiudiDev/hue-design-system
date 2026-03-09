@@ -15,6 +15,7 @@ export const InputPassword = (props) => {
     name,
     onChange,
     padding = "a-0",
+    prefix = null,
     value,
   } = props;
 
@@ -41,6 +42,7 @@ export const InputPassword = (props) => {
       name={name}
       onChange={onChange}
       padding={padding}
+      prefix={prefix}
       type={showPassword ? "textPassword" : "password"}
       value={value}
     />
@@ -58,5 +60,13 @@ InputPassword.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   padding: PropTypes.string,
+  prefix: PropTypes.shape({
+    icon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      onClick: PropTypes.func,
+    }),
+    text: PropTypes.string,
+    type: PropTypes.oneOf(["text", "icon"]).isRequired,
+  }),
   value: PropTypes.any,
 };

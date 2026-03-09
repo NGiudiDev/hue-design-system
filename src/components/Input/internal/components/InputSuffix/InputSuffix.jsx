@@ -45,9 +45,8 @@ InputSuffix.propTypes = {
   icon: PropTypes.shape({
     name: PropTypes.string.isRequired,
     onClick: PropTypes.func,
-    position: PropTypes.oneOf(["start", "end"]).isRequired,
   }),
   inputType: PropTypes.oneOf(["password", "text", "textPassword"]),
   text: PropTypes.string,
-  type: PropTypes.oneOf(["password", "text", "textPassword"]),
+  type: PropTypes.oneOf(["icon", "text"]),
 };
