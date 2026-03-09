@@ -8,6 +8,7 @@ import { Styles } from "./Icon.styles";
 import { icons } from "../../theme/icons";
 
 const DEFAULT_PROPS = {
+  className: null,
   color: "black.main",
   margin: "a-0",
   name: "home",
@@ -29,6 +30,7 @@ export const Icon = (props) => {
 
   return (
     <Styles.IconWrapper
+      className={attrs.className}
       $margin={attrs.margin}
       onClick={attrs.onClick}
       $size={attrs.size}
@@ -46,6 +48,7 @@ export const Icon = (props) => {
 };
 
 Icon.propTypes = {
+  className: PropTypes.string,
   color: PropTypes.string,
   margin: PropTypes.string,
   name: PropTypes.string,
