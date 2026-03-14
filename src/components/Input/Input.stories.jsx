@@ -28,7 +28,7 @@ export const Playground = {
     id: "id_del_input",
     isOptional: true,
     label: "Label",
-    margin: "t-20",
+    margin: "b-20",
     name: "input_name",
     onChange: () => {},
     padding: "a-0",
@@ -53,6 +53,7 @@ export const Playground = {
       >
         <Form>
           <Input {...args} />
+
           <button type="submit">Submit</button>
         </Form>
       </Formik>

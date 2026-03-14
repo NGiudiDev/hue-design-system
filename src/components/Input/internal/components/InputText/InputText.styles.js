@@ -56,12 +56,12 @@ const InputWrapper = styled("div")((props) => `
   }
 `);
 
-const Wrapper = styled("div")((props) => `
+const Wrapper = styled("div")`
   width: 100%;
 
-  ${marginProperties(props)}
-  ${paddingProperties(props)}
-`);
+  ${(props) => marginProperties(props)}
+  ${(props) => paddingProperties(props)}
+`;
 
 export const Styles = {
   CustomInput,
