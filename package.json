@@ -1,6 +1,6 @@
 {
   "name": "ngiudi-hue-ds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Design System implemented in React",
   "main": "./dist/index.js",
   "scripts": {
