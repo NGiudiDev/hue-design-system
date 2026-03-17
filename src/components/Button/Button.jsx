@@ -1,59 +1,58 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { ButtonSelector } from "./components/ButtonSelector";
 import { Icon } from "../Icon/Icon";
 
 import { Styles } from "./Button.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  disabled: false,
-  disclosure: false,
-  fullWidth: false,
-  iconProps: {
-    color: "currentColor",
-    margin: "r-8",
-    name: "",
-    size: "minor",
-  },
-  id: null,
-  isLoading: false,
-  kind: "filled",
-  margin: "",
-  onClick: null,
-  type: "button",
+const DEFAULT_ICON_PROPS = {
+  color: "currentColor",
+  margin: "r-8",
+  name: "",
+  size: "minor",
 };
 
 export const Button = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    disabled = false,
+    disclosure = false,
+    fullWidth = false,
+    iconProps = {},
+    id = null,
+    isLoading = false,
+    kind = "filled",
+    margin = "",
+    onClick = null,
+    type = "button",
+  } = props;
+
+  const resolvedIconProps = { ...DEFAULT_ICON_PROPS, ...iconProps };
 
   return (
     <ButtonSelector
-      disabled={attrs.disabled || attrs.isLoading}
-      disclosure={attrs.disclosure}
-      fullWidth={attrs.fullWidth}
-      iconProps={attrs.iconProps}
-      id={attrs.id}
-      kind={attrs.kind}
-      margin={attrs.margin}
-      onClick={attrs.onClick}
-      type={attrs.type}
+      disabled={disabled || isLoading}
+      disclosure={disclosure}
+      fullWidth={fullWidth}
+      id={id}
+      kind={kind}
+      margin={margin}
+      onClick={onClick}
+      type={type}
     >
       {/* loading view */}
-      <Styles.LoaderWrapper $isLoading={attrs.isLoading}>
+      <Styles.LoaderWrapper $isLoading={isLoading}>
         <Icon color="currentColor" name="spinner" size="minor" />
       </Styles.LoaderWrapper>
 
       {/* content view */}
-      <Styles.ContentWrapper $isLoading={attrs.isLoading}>
-        {attrs.iconProps.name && <Icon {...attrs.iconProps} />}
+      <Styles.ContentWrapper $isLoading={isLoading}>
+        {resolvedIconProps.name && <Icon {...resolvedIconProps} />}
 
-        {attrs.children}
+        {children}
 
-        {attrs.disclosure && (
+        {disclosure && (
           <Icon color="currentColor" margin="l-8" name="downAngle" size="minor" />  
         )}
       </Styles.ContentWrapper>

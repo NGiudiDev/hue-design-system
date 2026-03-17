@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Styles } from "./Box.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  margin: "a-0",
-  padding: "a-0",
-};
-
 export const Box = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    margin = "a-0",
+    padding = "a-0",
+  } = props;
 
   return (
-    <Styles.Wrapper $margin={attrs.margin} $padding={attrs.padding}>
-      {attrs.children}
+    <Styles.Wrapper $margin={margin} $padding={padding}>
+      {children}
     </Styles.Wrapper>
   );
 };

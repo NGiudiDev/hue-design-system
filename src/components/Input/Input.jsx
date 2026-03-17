@@ -1,48 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
 import { useField } from "formik";
 
 import { InputText } from "./internal/components/InputText/InputText";
 import { InputPassword } from "./internal/components/InputPassword";
 
-const DEFAULT_PROPS = {
-  disabled: false,
-  helpText: null,
-  id: null,
-  isOptional: false,
-  label: null,
-  margin: "a-0",
-  name: null,
-  padding: "a-0",
-  prefix: null,
-  suffix: null,
-  type: "text",
-};
-
 //TODO: Agregar un componente tipo NumberInput
 //TODO: Agregar un componente tipo TextArea
 export const Input = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    disabled = false,
+    helpText = null,
+    id = null,
+    isOptional = false,
+    label = null,
+    margin = "a-0",
+    name = null,
+    padding = "a-0",
+    prefix = null,
+    suffix = null,
+    type = "text",
+  } = props;
 
-  const [field, meta] = useField({ name: attrs.name });
+  const [field, meta] = useField({ name });
 
-  switch (attrs.type) {
+  switch (type) {
     case "password":
       return (
         <InputPassword
-          disabled={attrs.disabled}
+          disabled={disabled}
           error={meta.error}
-          helpText={attrs.helpText}
-          id={attrs.id}
-          isOptional={attrs.isOptional}
-          label={attrs.label}
-          margin={attrs.margin}
-          name={attrs.name}
+          helpText={helpText}
+          id={id}
+          isOptional={isOptional}
+          label={label}
+          margin={margin}
+          name={name}
           onChange={field.onChange}
-          padding={attrs.padding}
-          prefix={attrs.prefix}
+          padding={padding}
+          prefix={prefix}
           value={field.value}
         />
       );
@@ -51,18 +48,18 @@ export const Input = (props) => {
     default:
       return (
         <InputText
-          disabled={attrs.disabled}
+          disabled={disabled}
           error={meta.error}
-          helpText={attrs.helpText}
-          id={attrs.id}
-          isOptional={attrs.isOptional}
-          label={attrs.label}
-          margin={attrs.margin}
-          name={attrs.name}
+          helpText={helpText}
+          id={id}
+          isOptional={isOptional}
+          label={label}
+          margin={margin}
+          name={name}
           onChange={field.onChange}
-          padding={attrs.padding}
-          prefix={attrs.prefix}
-          suffix={attrs.suffix}
+          padding={padding}
+          prefix={prefix}
+          suffix={suffix}
           value={field.value}
         />
       );

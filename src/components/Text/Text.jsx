@@ -1,55 +1,52 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Styles } from "./Text.styles";
 
 import { typography } from "../../theme/typography";
 
-const DEFAULT_PROPS = {
-  align: "start",
-  as: "p",
-  className: "",
-  color: "black",
-  decoration: "none",
-  htmlFor: "",
-  margin: "a-0",
-  padding: "a-0",
-  type: "bodyRegular",
-};
-
 export const Text = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    align = "start",
+    as = "p",
+    children,
+    className = "",
+    color = "black",
+    decoration = "none",
+    htmlFor = "",
+    margin = "a-0",
+    padding = "a-0",
+    type = "bodyRegular",
+  } = props;
 
-  // Validate typography type exists
-  if (!typography[attrs.type]) {
-    console.warn(`Typography type "${attrs.type}" not found. Using default "bodyRegular".`);
-    attrs.type = "bodyRegular";
+  let resolvedType = type;
+
+  if (!typography[resolvedType]) {
+    console.warn(`Typography type "${resolvedType}" not found. Using default "bodyRegular".`);
+    resolvedType = "bodyRegular";
   }
 
-  const labelProps = attrs.as === "label" ? { htmlFor: attrs.htmlFor } : {};
+  const labelProps = as === "label" ? { htmlFor } : {};
 
   const textOptions = {
-    $align: attrs.align,
-    children: attrs.children,
-    className: attrs.className,
-    $color: attrs.color,
-    $decoration: attrs.decoration,
-    $margin: attrs.margin,
-    $padding: attrs.padding,
-    $type: attrs.type,
+    $align: align,
+    children,
+    className,
+    $color: color,
+    $decoration: decoration,
+    $margin: margin,
+    $padding: padding,
+    $type: resolvedType,
   };
 
-  // Render appropriate wrapper based on element type
-  if (attrs.as === "label") {
+  if (as === "label") {
     return (
       <Styles.LabelWrapper {...labelProps} {...textOptions} />
     );
   }
 
   return (
-    <Styles.TextWrapper as={attrs.as} {...textOptions} />
+    <Styles.TextWrapper as={as} {...textOptions} />
   );
 };
 

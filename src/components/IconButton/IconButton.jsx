@@ -1,25 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Icon } from "../Icon/Icon";
 import { Text } from "../Text/Text";
 
 import { Styles } from "./IconButton.styles";
 
-const DEFAULT_PROPS = {
-  color: "primary",
-  count: 0,
-  disabled: false,
-  icon: {
-    name: "home",
-    size: "major",
-  },
-  id: null,
-  margin: "a-0",
-  onClick: () => {},
-  type: "button",
+const DEFAULT_ICON_PROPS = {
+  name: "home",
+  size: "major",
 };
 
 const ICON_COLORS = {
@@ -29,30 +18,41 @@ const ICON_COLORS = {
 };
 
 export const IconButton = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props, {
-    icon: {
-      color: ICON_COLORS[props.color || DEFAULT_PROPS.color],
-    },
-  });
+  const {
+    color = "primary",
+    count = 0,
+    disabled = false,
+    icon = {},
+    id = null,
+    margin = "a-0",
+    onClick,
+    type = "button",
+  } = props;
+
+  const resolvedIcon = {
+    ...DEFAULT_ICON_PROPS,
+    ...icon,
+    color: ICON_COLORS[color],
+  };
 
   return (
     <Styles.IconButton
-      $color={attrs.color}
-      disabled={attrs.disabled}
-      id={attrs.id}
-      $margin={attrs.margin}
-      onClick={attrs.onClick}
-      type={attrs.type}
+      $color={color}
+      disabled={disabled}
+      id={id}
+      $margin={margin}
+      onClick={onClick}
+      type={type}
     >
-      {attrs.count > 0 && (
+      {count > 0 && (
 				<Styles.Count>
 					<Text align="center" color="white.main" type="captionRegular">
-						{attrs.count > 9 ? "+9" : attrs.count}
+						{count > 9 ? "+9" : count}
 					</Text>
 				</Styles.Count>
 			)}
 
-      <Icon {...attrs.icon} />
+      <Icon {...resolvedIcon} />
     </Styles.IconButton>
   );
 };

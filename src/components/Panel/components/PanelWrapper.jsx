@@ -1,31 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Styles } from "../Panel.styles";
 
-const DEFAULT_PROPS = {
-  borderless: false,
-  children: null,
-  isFullHeight: false,
-  margin: "a-0",
-  onClick: null,
-  padding: "a-16",
-};
-
 export const PanelWrapper = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    borderless = false,
+    children = null,
+    isFullHeight = false,
+    margin = "a-0",
+    onClick = null,
+    padding = "a-16",
+  } = props;
 
   return (
     <Styles.Wrapper
-      $borderless={attrs.borderless}
-      $isFullHeight={attrs.isFullHeight}
-      $margin={attrs.margin}
-      onClick={attrs.onClick}
-      $padding={attrs.padding}
+      $borderless={borderless}
+      $isFullHeight={isFullHeight}
+      $margin={margin}
+      onClick={onClick}
+      $padding={padding}
     >
-      {attrs.children}
+      {children}
     </Styles.Wrapper>
   );
 };

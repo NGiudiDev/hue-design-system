@@ -4,7 +4,7 @@
 
 Este documento contiene las reglas de programación, convenciones y guías para desarrolladores que trabajen en el Design System **hue-design-system**. Todas las reglas han sido deducidas del análisis del código existente y deben ser seguidas para mantener la consistencia del proyecto.
 
-**Última actualización**: Octubre 2025
+**Última actualización**: Marzo 2026
 
 ---
 
@@ -27,23 +27,19 @@ src/components/ComponentName/
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
-import { Wrapper } from "./Box.styles";
-
-const DEFAULT_PROPS = {
-  children: null,
-  margin: "a-0",
-  padding: "a-0",
-};
+import { Styles } from "./Box.styles";
 
 export const Box = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    margin = "a-0",
+    padding = "a-0",
+  } = props;
 
   return (
-    <Wrapper $margin={attrs.margin} $padding={attrs.padding}>
-      {attrs.children}
-    </Wrapper>
+    <Styles.Wrapper $margin={margin} $padding={padding}>
+      {children}
+    </Styles.Wrapper>
   );
 };
 
@@ -130,46 +126,18 @@ Component.propTypes = {
 };
 ```
 
-### 2. Patrón DEFAULT_PROPS con Lodash Merge
-**REGLA**: Usar constante `DEFAULT_PROPS` y `merge` de lodash para combinar props.
-
-```jsx
-import { merge } from "lodash";
-
-const DEFAULT_PROPS = {
-  children: null,
-  margin: "a-0",
-  padding: "a-0",
-  color: "primary.main",
-  textProps: {
-    color: "white.main",
-    type: "captionSemibold",
-  },
-};
-
-export const Component = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
-  // usar attrs en lugar de props
-};
-```
-
-**Ventajas de merge vs spread operator:**
-- Merge profundo de objetos anidados (ej: `textProps`)
-- Mejor manejo de propiedades complejas
-- Más predecible con configuraciones avanzadas
-
-### 3. Prefijo $ para Styled-Components
+### 2. Prefijo $ para Styled-Components
 **REGLA**: Todas las props pasadas a styled-components deben tener prefijo `$`, siempre y cuando no sean html tags.
 
 ```jsx
 // ✅ CORRECTO
-<Wrapper $margin={attrs.margin} $padding={attrs.padding} $color={attrs.color}>
+<Wrapper $margin={margin} $padding={padding} $color={color}>
 
 // ❌ INCORRECTO  
-<Wrapper margin={attrs.margin} padding={attrs.padding} color={attrs.color}>
+<Wrapper margin={margin} padding={padding} color={color}>
 ```
 
-### 4. Naming Conventions
+### 3. Naming Conventions
 - **Componentes**: PascalCase (`Badge`, `GridWrapper`, `PanelFooter`)
 - **Props**: camelCase (`margin`, `padding`, `onClick`, `textProps`)
 - **Archivos**: PascalCase para componentes, camelCase para utilities
@@ -278,17 +246,17 @@ background-color: ${(props) => getColorValue(props.theme.colors, props.$color)};
 
 ```jsx
 // Validación de iconos
-const iconData = icons[attrs.name];
+const iconData = icons[name];
 
 if (!iconData) { 
-  console.warn(`Icon "${attrs.name}" not found`);
+  console.warn(`Icon "${name}" not found`);
   return null;
 }
 
 // Validación de typography
-if (!typography[attrs.type]) {
-  console.warn(`Typography type "${attrs.type}" not found. Using default "bodyRegular".`);
-  attrs.type = "bodyRegular";
+if (!typography[type]) {
+  console.warn(`Typography type "${type}" not found. Using default "bodyRegular".`);
+  type = "bodyRegular";
 }
 ```
 
@@ -308,15 +276,20 @@ if (!validValue) {
 }
 ```
 
-### 3. Manejo de Props Undefined/Null
-**REGLA**: Manejar defensivamente props undefined/null.
+### 3. Manejo de Props con Valores por Defecto
+**REGLA**: Usar destructuring con valores por defecto directamente desde `props`.
 
 ```jsx
-const DEFAULT_PROPS = {
-  children: null,  // Valor por defecto explícito
-  onClick: null,   // Funciones pueden ser null
-  textProps: {},   // Objetos deben tener fallback
-  data: {},        // Arrays/objetos siempre con valor por defecto
+export const Component = (props) => {
+  const {
+    children = null,       // Valor por defecto explícito
+    onClick = null,        // Funciones pueden ser null
+    textProps = {},        // Objetos deben tener fallback
+    margin = "a-0",        // Strings con valor por defecto
+    disabled = false,      // Booleanos con valor por defecto
+  } = props;
+
+  // ...
 };
 ```
 
@@ -532,8 +505,7 @@ import { Text } from "../Text/Text";
 // 3. Estilos
 import { Styles } from "./Component.styles";
 
-// 2. Utils
-import { merge } from "lodash";
+// 4. Utils
 
 // 5. Constantes
 import { colors } from "../../theme/colors";
@@ -546,9 +518,8 @@ import { colors } from "../../theme/colors";
 ### Stack Tecnológico Principal
 - **React**: 19+ (obligatorio)
 - **Styled-Components**: 6+ (obligatorio) 
-- **Lodash**: 4.17+ (obligatorio para merge)
 - **PropTypes**: Para validación (obligatorio)
-- **Storybook**: 9+ para documentación (obligatorio)
+- **Storybook**: 10+ para documentación (obligatorio)
 
 ### Herramientas de Build
 - **Vite**: Como bundler principal
@@ -579,7 +550,15 @@ npm run build-storybook # Build de Storybook estático
 - **Box**: Contenedor básico con spacing
 - **Divider**: Separador horizontal con colores del tema
 - **Icon**: Sistema de iconos SVG
+- **Image**: Componente de imagen con soporte de aspect ratio
 - **Text**: Sistema tipográfico con variantes
+
+#### Interactivos
+- **Button**: Botón con variantes (filled, outlined, text), iconos y loading
+- **IconButton**: Botón de solo icono
+- **Input**: Campo de entrada con integración Formik
+- **Link**: Enlace con soporte de navegación
+- **Steps**: Indicador de pasos (Wrapper + Step)
 
 #### Layouts
 - **Grid**: Sistema de grillas responsivo (Container + Item)
@@ -634,8 +613,6 @@ Antes de hacer commit, verificar:
 
 - [ ] Componente tiene archivo `.jsx`, `.styles.js`, `.stories.jsx` y `.docs.jsx`
 - [ ] PropTypes definidos para todas las props
-- [ ] DEFAULT_PROPS constante implementada
-- [ ] Usa `merge` de lodash para combinar DEFAULT_PROPS y props
 - [ ] Props de styled-components tienen prefijo `$`
 - [ ] Tokens de tema usados en lugar de valores hardcodeados
 - [ ] Sistema de spacing seguido correctamente
@@ -659,8 +636,9 @@ Antes de hacer commit, verificar:
 // Valores hardcodeados
 <Component style={{color: "#FF0000", margin: "10px"}} />
 
-// Spread operator en lugar de merge
-const attrs = { ...DEFAULT_PROPS, ...props };
+// Usar lodash u otras librerías para merge de props
+import { merge } from "lodash";
+const attrs = merge({}, DEFAULT_PROPS, props);
 
 // Props sin validación
 export const Component = (props) => {
@@ -676,13 +654,15 @@ const Component = () => {
   return <div style={styles}>Content</div>;
 };
 
+// Destructuring inline en los parámetros
+export const Component = ({ children = null, margin = "a-0" }) => { ... };
+
 // Documentación incompleta
 // Falta .docs.jsx o argTypes vacíos
 
 // Imports desordenados
 import { Styles } from "./Component.styles";
 import React from "react";
-import { merge } from "lodash";
 ```
 
 ### ✅ Hacer:
@@ -690,9 +670,14 @@ import { merge } from "lodash";
 // Tokens del tema
 <Component color="primary.main" margin="a-16" />
 
-// Merge de lodash
-import { merge } from "lodash";
-const attrs = merge({}, DEFAULT_PROPS, props);
+// Destructuring de props dentro del cuerpo de la función
+export const Component = (props) => {
+  const {
+    children = null,
+    margin = "a-0",
+  } = props;
+  // ...
+};
 
 // Props con validación
 Component.propTypes = {
@@ -701,12 +686,24 @@ Component.propTypes = {
 };
 
 // Styled-components con prefijo $
-<Wrapper $margin={spacing} $color={theme} />
+<Wrapper $margin={margin} $color={color} />
 
 // Estilos separados
 const Wrapper = styled.div`
   color: ${props => getColorValue(props.theme.colors, props.$color)};
 `;
+
+// Para props de objetos anidados, usar constantes + spread
+const DEFAULT_TEXT_PROPS = {
+  color: "white.main",
+  type: "captionSemibold",
+};
+
+export const Badge = (props) => {
+  const { textProps = {} } = props;
+  const resolvedTextProps = { ...DEFAULT_TEXT_PROPS, ...textProps };
+  // ...
+};
 
 // Documentación completa
 // .jsx + .styles.js + .stories.jsx + .docs.jsx
@@ -714,7 +711,6 @@ const Wrapper = styled.div`
 // Imports ordenados correctamente
 import React from "react";
 import PropTypes from "prop-types";
-import { merge } from "lodash";
 
 import { Text } from "../Text/Text";
 
@@ -728,8 +724,7 @@ import { Styles } from "./Component.styles";
 ### Documentación de Referencia
 - [React 19 Docs](https://react.dev/)
 - [Styled-Components Docs](https://styled-components.com/)
-- [Storybook 9 Docs](https://storybook.js.org/)
-- [Lodash Docs](https://lodash.com/docs/)
+- [Storybook 10 Docs](https://storybook.js.org/)
 
 ### Herramientas Útiles
 - **Storybook**: `npm run start` - Puerto 6006

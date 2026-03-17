@@ -1,59 +1,48 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Icon } from "../../Icon/Icon";
 
 import { Styles } from "../Button.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  disabled: false,
-  disclosure: false,
-  fullWidth: false,
-  iconProps: {
-    color: "currentColor",
-    margin: "r-8",
-    name: "",
-    size: "minor",
-  },
-  id: null,
-  kind: "filled",
-  margin: "",
-  onClick: null,
-  type: "button",
-};
-
 export const ButtonSelector = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
-
-  switch (attrs.kind) {
+  const {
+    children = null,
+    disabled = false,
+    fullWidth = false,
+    id = null,
+    kind = "filled",
+    margin = "",
+    onClick = null,
+    type = "button",
+  } = props;
+  
+  switch (kind) {
     case "outlined":
       return (
         <Styles.OutlinedButton
-          disabled={attrs.disabled}
-          $fullWidth={attrs.fullWidth}
-          id={attrs.id}
-          $margin={attrs.margin}
-          onClick={attrs.onClick}
-          type={attrs.type}
+          disabled={disabled}
+          $fullWidth={fullWidth}
+          id={id}
+          $margin={margin}
+          onClick={onClick}
+          type={type}
         >
-          {attrs.children}
+          {children}
         </Styles.OutlinedButton>
       );
     
     case "text":
       return (
         <Styles.TextButton
-          disabled={attrs.disabled}
-          $fullWidth={attrs.fullWidth}
-          id={attrs.id}
-          $margin={attrs.margin}
-          onClick={attrs.onClick}
-          type={attrs.type}
+          disabled={disabled}
+          $fullWidth={fullWidth}
+          id={id}
+          $margin={margin}
+          onClick={onClick}
+          type={type}
         >
-          {attrs.children}
+          {children}
         </Styles.TextButton>
       );
 
@@ -61,14 +50,14 @@ export const ButtonSelector = (props) => {
     default:
       return (
         <Styles.FilledButton
-          disabled={attrs.disabled}
-          $fullWidth={attrs.fullWidth}
-          id={attrs.id}
-          $margin={attrs.margin}
-          onClick={attrs.onClick}
-          type={attrs.type}
+          disabled={disabled}
+          $fullWidth={fullWidth}
+          id={id}
+          $margin={margin}
+          onClick={onClick}
+          type={type}
         >
-          {attrs.children}
+          {children}
         </Styles.FilledButton>
       );
   }

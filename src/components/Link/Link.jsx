@@ -1,28 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Styles } from "./Link.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  href: null,
-  openInNewTab: false,
-  type: "bodyRegular",
-};
-
 export const Link = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    href = null,
+    openInNewTab = false,
+    type = "bodyRegular",
+  } = props;
 
   return (
     <Styles.LinkContainer 
-      href={attrs.href}
-      target={attrs.openInNewTab ? "_blank" : undefined}
-      rel={attrs.openInNewTab ? "noopener noreferrer" : undefined}
-      $type={attrs.type}
+      href={href}
+      target={openInNewTab ? "_blank" : undefined}
+      rel={openInNewTab ? "noopener noreferrer" : undefined}
+      $type={type}
     >
-      {attrs.children}
+      {children}
     </Styles.LinkContainer>
   );
 };

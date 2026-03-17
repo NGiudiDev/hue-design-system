@@ -1,25 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Styles } from "../Panel.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  padding: "a-0",
-  margin: "a-0",
-};
-
 export const PanelFooter = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    margin = "a-0",
+    padding = "a-0",
+  } = props;
 
   return (
     <Styles.Footer
-      $margin={attrs.margin}
-      $padding={attrs.padding}
+      $margin={margin}
+      $padding={padding}
     >
-      {attrs.children}
+      {children}
     </Styles.Footer>
   );
 };

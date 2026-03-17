@@ -5,32 +5,28 @@ import { Step } from "./components/Step";
 
 import { Styles } from "./Steps.styles";
 
-import { merge } from "lodash";
-
-const DEFAULT_PROPS = {
-  labels: [],
-  margin: null,
-  step: 1,
-  steps: 3,
-};
-
 export const Steps = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    labels = [],
+    margin = null,
+    step = 1,
+    steps = 3,
+  } = props;
 
-  const stepsArray = Array.from({ length: attrs.steps }, (_, index) => index + 1);
+  const stepsArray = Array.from({ length: steps }, (_, index) => index + 1);
 
   return (
-    <Styles.Wrapper $margin={attrs.margin}>
+    <Styles.Wrapper $margin={margin}>
       {stepsArray.map((stepNumber, index) => {
         return (
           <React.Fragment key={index}>
             <Step
-              isCompleted={stepNumber <= attrs.step}
-              label={attrs.labels[index]}
+              isCompleted={stepNumber <= step}
+              label={labels[index]}
               step={stepNumber}
             />
 
-            {stepNumber < attrs.steps && <Styles.Line />}
+            {stepNumber < steps && <Styles.Line />}
           </React.Fragment>
         );
       })}

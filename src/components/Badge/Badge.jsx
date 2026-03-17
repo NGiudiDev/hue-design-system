@@ -1,34 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Text } from "../Text/Text";
 
 import { Styles } from "./Badge.styles";
 
-const DEFAULT_PROPS = {
-  children: null,
-  color: "primary.main",
-  margin: "a-0",
-  padding: "x-4 y-2",
-  textProps: {
-    color: "white.main",
-    type: "captionSemibold",
-  },
+const DEFAULT_TEXT_PROPS = {
+  color: "white.main",
+  type: "captionSemibold",
 };
 
 export const Badge = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    children = null,
+    color = "primary.main",
+    margin = "a-0",
+    padding = "x-4 y-2",
+    textProps = {},
+  } = props;
+  
+  const resolvedTextProps = { ...DEFAULT_TEXT_PROPS, ...textProps };
 
   return (
     <Styles.Wrapper
-      $color={attrs.color}
-      $margin={attrs.margin}
-      $padding={attrs.padding}
+      $color={color}
+      $margin={margin}
+      $padding={padding}
     >
-      <Text {...attrs.textProps}>
-        {attrs.children}
+      <Text {...resolvedTextProps}>
+        {children}
       </Text>
     </Styles.Wrapper>
   );

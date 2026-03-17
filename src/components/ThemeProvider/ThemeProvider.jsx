@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { ThemeProvider as StyledThemeProvider, createGlobalStyle } from "styled-components";
 
 import { animations } from "../../theme/animations";
@@ -12,17 +10,15 @@ import { shadows } from "../../theme/shadows";
 import { colors } from "../../theme/colors";
 import { icons } from "../../theme/icons";
 
-const DEFAULT_PROPS = {
-  children: null,
-};
-
 const GoogleFontsStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 `;
 
 export const ThemeProvider = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
-
+  const {
+    children = null,
+  } = props;
+  
   const theme = {
     animations: animations,
     breakpoints: breakpoints,
@@ -37,7 +33,7 @@ export const ThemeProvider = (props) => {
     <StyledThemeProvider theme={theme}>
       <GoogleFontsStyle />
 
-      {attrs.children}
+      {children}
     </StyledThemeProvider>
   );
 };

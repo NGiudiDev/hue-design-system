@@ -1,39 +1,35 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-import { merge } from "lodash";
-
 import { Icon } from "../Icon/Icon";
 
 import { getDimentions } from "./internal/image.utils";
 import { Styles } from "./Image.styles";
 
-const DEFAULT_PROPS = {
-  alt: "",
-  height: 0,
-  margin: "a-0",
-  shape: "square",
-  size: "md",
-  src: null,
-  width: 0,
-};
-
 export const Image = (props) => {
-  const attrs = merge({}, DEFAULT_PROPS, props);
+  const {
+    alt = "",
+    height = 0,
+    margin = "a-0",
+    shape = "square",
+    size = "md",
+    src = null,
+    width = 0,
+  } = props;
 
   const [isLoading, setIsLoading] = useState(true);
-  const [showFallback, setShowFallback] = useState(!attrs.src);
+  const [showFallback, setShowFallback] = useState(!src);
 
-  const dimentions = getDimentions(attrs.shape, attrs.size, attrs.width, attrs.height);
+  const dimentions = getDimentions(shape, size, width, height);
 
   if (showFallback) {
     return (
       <Styles.Fallback
-        aria-label={`${attrs.alt}_fallback`}
+        aria-label={`${alt}_fallback`}
         $height={dimentions.height}
-        $margin={attrs.margin}
+        $margin={margin}
         role="img"
-        $shape={attrs.shape}
+        $shape={shape}
         $width={dimentions.width}
       >
         <Icon name="image" size="minor"/>
@@ -44,18 +40,18 @@ export const Image = (props) => {
   return (
     <Styles.Wrapper
       $height={dimentions.height}
-      $margin={attrs.margin}
-      $shape={attrs.shape}
+      $margin={margin}
+      $shape={shape}
       $width={dimentions.width}
     >
       <Styles.Image
-        alt={attrs.alt}
+        alt={alt}
         $height={dimentions.height}
         $isLoading={isLoading}
         onError={() => setShowFallback(true)}
         onLoad={() => setIsLoading(false)}
-        $shape={attrs.shape}
-        src={attrs.src}
+        $shape={shape}
+        src={src}
         $width={dimentions.width}
       />
     </Styles.Wrapper>
