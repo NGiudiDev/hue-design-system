@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
 import { useField } from "formik";
 
 import { InputText } from "./internal/components/InputText/InputText";
 import { InputPassword } from "./internal/components/InputPassword";
-
-import { merge } from "lodash";
 
 const DEFAULT_PROPS = {
   disabled: false,

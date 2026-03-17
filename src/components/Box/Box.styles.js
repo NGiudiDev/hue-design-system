@@ -1,12 +1,10 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { marginProperties, paddingProperties } from "../../utils/spacing";
 
 const Wrapper = styled("div")`
-  ${(props) => css`
-    ${marginProperties(props)}
-    ${paddingProperties(props)}
-  `}
+  ${(props) => marginProperties(props)}
+  ${(props) => paddingProperties(props)}
 `;
 
 export const Styles = {

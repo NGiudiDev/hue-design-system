@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
+
 import { ButtonSelector } from "./components/ButtonSelector";
 import { Icon } from "../Icon/Icon";
 
 import { Styles } from "./Button.styles";
-
-import { merge } from "lodash";
 
 const DEFAULT_PROPS = {
   children: null,

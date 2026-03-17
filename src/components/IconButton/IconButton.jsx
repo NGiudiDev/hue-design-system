@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
+
 import { Icon } from "../Icon/Icon";
 import { Text } from "../Text/Text";
 
 import { Styles } from "./IconButton.styles";
-
-import { merge } from "lodash";
 
 const DEFAULT_PROPS = {
   color: "primary",

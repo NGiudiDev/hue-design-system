@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
+
 import { Icon } from "../../Icon/Icon";
 
 import { Styles } from "../Button.styles";
-import { merge } from "lodash";
 
 const DEFAULT_PROPS = {
   children: null,
@@ -32,9 +33,7 @@ export const ButtonSelector = (props) => {
       return (
         <Styles.OutlinedButton
           disabled={attrs.disabled}
-          $disclosure={attrs.disclosure}
           $fullWidth={attrs.fullWidth}
-          $iconProps={attrs.iconProps}
           id={attrs.id}
           $margin={attrs.margin}
           onClick={attrs.onClick}
@@ -48,9 +47,7 @@ export const ButtonSelector = (props) => {
       return (
         <Styles.TextButton
           disabled={attrs.disabled}
-          $disclosure={attrs.disclosure}
           $fullWidth={attrs.fullWidth}
-          $iconProps={attrs.iconProps}
           id={attrs.id}
           $margin={attrs.margin}
           onClick={attrs.onClick}
@@ -65,9 +62,7 @@ export const ButtonSelector = (props) => {
       return (
         <Styles.FilledButton
           disabled={attrs.disabled}
-          $disclosure={attrs.disclosure}
           $fullWidth={attrs.fullWidth}
-          $iconProps={attrs.iconProps}
           id={attrs.id}
           $margin={attrs.margin}
           onClick={attrs.onClick}

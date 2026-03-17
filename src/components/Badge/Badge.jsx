@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
+
 import { Text } from "../Text/Text";
 
 import { Styles } from "./Badge.styles";
-
-import { merge } from "lodash";
 
 const DEFAULT_PROPS = {
   children: null,

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+import { merge } from "lodash";
+
 import { Icon } from "../Icon/Icon";
 
-import { Styles } from "./Image.styles";
-
 import { getDimentions } from "./internal/image.utils";
-import { merge } from "lodash";
+import { Styles } from "./Image.styles";
 
 const DEFAULT_PROPS = {
   alt: "",
