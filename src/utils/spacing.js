@@ -21,19 +21,19 @@ const handleSpacing = (spacingString, type) => {
 
   obj[`${type}Bottom`] = `${
     spacingsObj.b || spacingsObj.y || spacingsObj.a || 0
-  }px;`;
+  }px`;
 
   obj[`${type}Left`] = `${
     spacingsObj.l || spacingsObj.x || spacingsObj.a || 0
-  }px;`;
+  }px`;
 
   obj[`${type}Right`] = `${
     spacingsObj.r || spacingsObj.x || spacingsObj.a || 0
-  }px;`;
+  }px`;
 
   obj[`${type}Top`] = `${
     spacingsObj.t || spacingsObj.y || spacingsObj.a || 0
-  }px;`;
+  }px`;
 
   return obj;
 };

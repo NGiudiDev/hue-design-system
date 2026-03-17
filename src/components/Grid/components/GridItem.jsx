@@ -37,7 +37,7 @@ export const GridItem = (props) => {
 GridItem.propTypes = {
   align: PropTypes.oneOf(["left", "center", "right", "justify"]),
   children: PropTypes.node,
-  paddding: PropTypes.string,
+  padding: PropTypes.string,
   xs: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(["auto"])]),
   sm: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(["auto"])]),
   md: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(["auto"])]),

@@ -5,23 +5,23 @@ const LinkContainer = styled("a")((props) => {
   
   return `
     background-color: transparent;
-    color: ${(props) => props.theme.colors.link.main};
-    font-family: Public Sans, sans-serif;
+    color: ${props.theme.colors.link.main};
+    font-family: ${props.theme.fontFamily};
     font-size: ${typographyVariant.size};
     font-weight: ${typographyVariant.weight};
     line-height: ${typographyVariant.lineHeight};
     text-decoration: underline;
 
     &:hover {
-      color: ${(props) => props.theme.colors.link.hovered};
+      color: ${props.theme.colors.link.hovered};
     }
 
     &:active {
-      color: ${(props) => props.theme.colors.link.pressed};
+      color: ${props.theme.colors.link.pressed};
     }
 
     &:visited {
-      color: ${(props) => props.theme.colors.link.visited};
+      color: ${props.theme.colors.link.visited};
     }
   `;
 });

@@ -18,8 +18,9 @@ const FilledButton = styled("button")`
     border-radius: 4px;
     box-shadow: ${props.theme.shadows.level1};
     color: ${props.theme.colors.white.main};
+    cursor: pointer;
     display: inline-flex;
-    font-family: Public Sans, sans-serif;
+    font-family: ${props.theme.fontFamily};
     font-size: ${props.theme.typography.bodySemibold.size};
     font-weight: ${props.theme.typography.bodySemibold.weight};
     height: 38px;
@@ -45,6 +46,7 @@ const FilledButton = styled("button")`
     &:disabled {
       background-color: ${props.theme.colors.black.border};
       box-shadow: none;
+      cursor: not-allowed;
     }
   `}
 `;
@@ -71,8 +73,9 @@ const OutlinedButton = styled("button")`
     border-style: solid;
     border-width: 1px;
     color: ${props.theme.colors.primary.main};
+    cursor: pointer;
     display: inline-flex;
-    font-family: Public Sans, sans-serif;
+    font-family: ${props.theme.fontFamily};
     font-size: ${props.theme.typography.bodySemibold.size};
     font-weight: ${props.theme.typography.bodySemibold.weight};
     height: 38px;
@@ -99,6 +102,7 @@ const OutlinedButton = styled("button")`
     &:disabled {
       border-color: ${props.theme.colors.black.disabled};
       color: ${props.theme.colors.black.disabled};
+      cursor: not-allowed;
     }
   `}
 `;
@@ -110,8 +114,9 @@ const TextButton = styled("button")`
     border: none;
     border-radius: 4px;
     color: ${props.theme.colors.primary.main};
+    cursor: pointer;
     display: inline-flex;
-    font-family: Public Sans, sans-serif;
+    font-family: ${props.theme.fontFamily};
     font-size: ${props.theme.typography.bodySemibold.size};
     font-weight: ${props.theme.typography.bodySemibold.weight};
     height: 38px;
@@ -135,6 +140,7 @@ const TextButton = styled("button")`
 
     &:disabled {
       color: ${props.theme.colors.black.disabled};
+      cursor: not-allowed;
     }
   `}
 `;

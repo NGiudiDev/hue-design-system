@@ -1,3 +1,5 @@
+export const fontFamily = "Public Sans, sans-serif";
+
 export const typography = {
   bodyRegular: {
     lineHeight: "20px",

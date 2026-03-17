@@ -73,11 +73,17 @@ export { Grid } from "./components/Grid/Grid";
 
 export { Icon } from "./components/Icon/Icon";
 
+export { IconButton } from "./components/IconButton/IconButton";
+
+export { Image } from "./components/Image/Image";
+
 export { Input } from "./components/Input/Input";
 
 export { Link } from "./components/Link/Link";
 
 export { Panel } from "./components/Panel/Panel";
+
+export { Steps } from "./components/Steps/Steps";
 
 export { Text } from "./components/Text/Text";
 

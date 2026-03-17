@@ -14,7 +14,7 @@ const DEFAULT_PROPS = {
   padding: "x-4 y-2",
   textProps: {
     color: "white.main",
-    size: "captionSemibold",
+    type: "captionSemibold",
   },
 };
 

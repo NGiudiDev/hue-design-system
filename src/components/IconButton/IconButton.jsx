@@ -46,7 +46,7 @@ export const IconButton = (props) => {
     >
       {attrs.count > 0 && (
 				<Styles.Count>
-					<Text align="center" color="white" type="captionRegular">
+					<Text align="center" color="white.main" type="captionRegular">
 						{attrs.count > 9 ? "+9" : attrs.count}
 					</Text>
 				</Styles.Count>

@@ -8,8 +8,8 @@ const Wrapper = styled("div")((props) => `
   justify-content: center;
   max-width: ${props.maxWidth};
   
-  ${(props) => marginProperties(props)}
-  ${(props) => paddingProperties(props)}
+  ${marginProperties(props)}
+  ${paddingProperties(props)}
 `);
 
 const Line = styled("div")((props) => `

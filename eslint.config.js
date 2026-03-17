@@ -5,8 +5,10 @@ import pluginReact from "eslint-plugin-react";
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
+    ignores: ["dist/**", "node_modules/**", "storybook-static/**"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    ignores: ["/dist", "/node_modules", "/storybook-static"],
     languageOptions: {
       globals: {
         ...globals.browser,

@@ -63,7 +63,7 @@ export const Button = (props) => {
 
 Button.propTypes = {
   children: PropTypes.node,
-  disabled: PropTypes.any,
+  disabled: PropTypes.bool,
   disclosure: PropTypes.bool,
   fullWidth: PropTypes.bool,
   iconProps: Icon.propTypes,

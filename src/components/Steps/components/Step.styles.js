@@ -29,7 +29,7 @@ const Label = styled("span")((props) => `
     : props.theme.colors.black.disabled
   };
 
-  font-family: Public Sans, sans-serif;
+  font-family: ${props.theme.fontFamily};
   font-size: ${props.theme.typography.captionRegular.size};
   font-weight: ${props.theme.typography.captionRegular.weight};
   padding-left: 8px;
@@ -41,7 +41,7 @@ const Number = styled("span")((props) => `
     : props.theme.colors.black.disabled
   };
   
-  font-family: Public Sans, sans-serif;
+  font-family: ${props.theme.fontFamily};
   font-size: ${props.theme.typography.bodySemibold.size};
   font-weight: ${props.theme.typography.bodySemibold.weight};
 `);

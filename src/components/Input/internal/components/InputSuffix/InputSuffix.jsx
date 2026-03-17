@@ -18,7 +18,7 @@ export const InputSuffix = (props) => {
 
       return (
         <Styles.CustomIcon
-          disabled={disabled}
+          $disabled={disabled}
           name={icon.name}
           onClick={disabled ? null : icon.onClick}
           size="minor"
@@ -28,7 +28,7 @@ export const InputSuffix = (props) => {
       return (
         <Styles.CustomText
           color={disabled ? "black.disabled" : "black.mediumEmphasis"}
-          disabled={disabled}
+          $disabled={disabled}
           margin="l-4"
         >
           {text}

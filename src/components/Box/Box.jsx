@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { merge } from "lodash";
 
-import { Wrapper } from "./Box.styles";
+import { Styles } from "./Box.styles";
 
 const DEFAULT_PROPS = {
   children: null,
@@ -15,9 +15,9 @@ export const Box = (props) => {
   const attrs = merge({}, DEFAULT_PROPS, props);
 
   return (
-    <Wrapper $margin={attrs.margin} $padding={attrs.padding}>
+    <Styles.Wrapper $margin={attrs.margin} $padding={attrs.padding}>
       {attrs.children}
-    </Wrapper>
+    </Styles.Wrapper>
   );
 };
 

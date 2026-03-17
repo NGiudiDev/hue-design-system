@@ -11,7 +11,7 @@ const textStyles = (props) => {
   
   return css`
     color: ${getColorValue(props.theme.colors, props.$color) || props.theme.colors.black.main};
-    font-family: Public Sans, sans-serif;
+    font-family: ${props.theme.fontFamily};
     font-size: ${typographyVariant.size};
     font-weight: ${typographyVariant.weight};
     line-height: ${typographyVariant.lineHeight};

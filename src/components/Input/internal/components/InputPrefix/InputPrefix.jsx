@@ -11,7 +11,7 @@ export const InputPrefix = (props) => {
       return (
         <Styles.CustomIcon
           color={disabled ? "black.disabled" : "black.mediumEmphasis"}
-          disabled={disabled}
+          $disabled={disabled}
           name={icon.name}
           size="minor"
         />
@@ -20,7 +20,7 @@ export const InputPrefix = (props) => {
       return (
         <Styles.CustomText
           color={disabled ? "black.disabled" : "black.mediumEmphasis"}
-          disabled={disabled}
+          $disabled={disabled}
           margin="r-4"
         >
           {text}
