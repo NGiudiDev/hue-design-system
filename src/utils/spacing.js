@@ -6,8 +6,7 @@
  * @return {string} spacing css code.
  */
 const handleSpacing = (spacingString, type) => {
-  let spacingsObj = {};
-  let obj = {};
+  const spacingsObj = {};
 
   const spacings = spacingString.split(" ");
 
@@ -19,23 +18,12 @@ const handleSpacing = (spacingString, type) => {
     spacingsObj[border] = value;
   });
 
-  obj[`${type}Bottom`] = `${
-    spacingsObj.b || spacingsObj.y || spacingsObj.a || 0
-  }px`;
+  const bottom = spacingsObj.b || spacingsObj.y || spacingsObj.a || 0;
+  const left = spacingsObj.l || spacingsObj.x || spacingsObj.a || 0;
+  const right = spacingsObj.r || spacingsObj.x || spacingsObj.a || 0;
+  const top = spacingsObj.t || spacingsObj.y || spacingsObj.a || 0;
 
-  obj[`${type}Left`] = `${
-    spacingsObj.l || spacingsObj.x || spacingsObj.a || 0
-  }px`;
-
-  obj[`${type}Right`] = `${
-    spacingsObj.r || spacingsObj.x || spacingsObj.a || 0
-  }px`;
-
-  obj[`${type}Top`] = `${
-    spacingsObj.t || spacingsObj.y || spacingsObj.a || 0
-  }px`;
-
-  return obj;
+  return `${type}-bottom: ${bottom}px; ${type}-left: ${left}px; ${type}-right: ${right}px; ${type}-top: ${top}px;`;
 };
 
 /**
@@ -45,13 +33,11 @@ const handleSpacing = (spacingString, type) => {
  * @return {string} string with margin values.
  */
 export const marginProperties = (props, defaultValue) => {
-  let obj = "";
-
   if (props.$margin || defaultValue) {
-    obj = handleSpacing(props.$margin || defaultValue, "margin");
+    return handleSpacing(props.$margin || defaultValue, "margin");
   }
 
-  return obj;
+  return "";
 };
 
 /**
@@ -61,11 +47,9 @@ export const marginProperties = (props, defaultValue) => {
  * @return {string} string with padding values.
  */
 export const paddingProperties = (props, defaultValue) => {
-  let obj = {};
-
   if (props.$padding || defaultValue) {
-    obj = handleSpacing(props.$padding || defaultValue, "padding");
+    return handleSpacing(props.$padding || defaultValue, "padding");
   }
 
-  return obj;
+  return "";
 };
