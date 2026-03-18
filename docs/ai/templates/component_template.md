@@ -1,62 +1,45 @@
 # Template: Nuevo Componente
 
-Usa esta plantilla para crear un componente nuevo consistente con el design system.
+> Ejemplos completos en [full_guidelines.md](../full_guidelines.md).
 
-## 1 - Estructura de archivos
+## Archivos a crear
 
-Crear carpeta:
+- src/components/ComponentName/ComponentName.jsx
+- src/components/ComponentName/ComponentName.styles.js
+- src/components/ComponentName/ComponentName.stories.jsx
+- src/components/ComponentName/ComponentName.docs.jsx
 
-- src/components/ComponentName/
+## Checklist por archivo
 
-Crear archivos:
+### ComponentName.jsx
+- [ ] Import React y PropTypes
+- [ ] Destructuring de props dentro del cuerpo
+- [ ] Defaults seguros
+- [ ] Props a styled-components con prefijo $
+- [ ] Export nombrado
 
-- ComponentName.jsx
-- ComponentName.styles.js
-- ComponentName.stories.jsx
-- ComponentName.docs.jsx
+### ComponentName.styles.js
+- [ ] styled-components
+- [ ] marginProperties / paddingProperties
+- [ ] getColorValue con tokens
+- [ ] Export bajo objeto Styles
 
-## 2 - ComponentName.jsx
+### ComponentName.stories.jsx
+- [ ] argTypes con descripcion en espanol
+- [ ] Controls por tipo de prop
+- [ ] Playground
+- [ ] docs.page conectado a ComponentNameDocs
 
-Puntos obligatorios:
+### ComponentName.docs.jsx
+- [ ] Titulo y descripcion
+- [ ] Principios
+- [ ] Propiedades (Canvas + Controls)
+- [ ] Variantes y ejemplos
+- [ ] Buenas practicas y evitar
 
-- Importar React y PropTypes.
-- Hacer destructuring de props dentro del cuerpo.
-- Definir defaults seguros.
-- Pasar props a styled components con prefijo $ cuando corresponda.
-- Exportar componente nombrado.
+## Validacion
 
-## 3 - ComponentName.styles.js
-
-Puntos obligatorios:
-
-- Usar styled-components.
-- Usar utilidades de spacing.
-- Usar utilidades de color basadas en tokens.
-- Exportar bajo objeto Styles.
-
-## 4 - ComponentName.stories.jsx
-
-Puntos obligatorios:
-
-- Definir argTypes con descripcion en espanol.
-- Definir Controls adecuados por tipo de prop.
-- Incluir Playground.
-- Conectar docs.page con ComponentNameDocs.
-
-## 5 - ComponentName.docs.jsx
-
-Secciones obligatorias:
-
-1. Titulo y descripcion.
-2. Principios.
-3. Propiedades.
-4. Variantes y ejemplos.
-5. Casos de uso comunes.
-6. Buenas practicas y evitar.
-
-## 6 - Validacion final
-
-- npm run lint
-- npm run check:components
-
-Si agregas un patron nuevo, actualiza AGENTS.MD y docs/ai/decisions.md en el mismo cambio.
+```bash
+npm run lint
+npm run check:components
+```

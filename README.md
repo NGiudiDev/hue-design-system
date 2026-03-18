@@ -9,7 +9,6 @@ Este repositorio incluye una capa de documentacion orientada a asistentes de IA 
 ### Puntos de entrada
 
 - AGENTS.MD
-- docs/ai/README.md
 
 ### Guias por dominio
 
