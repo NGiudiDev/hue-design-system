@@ -140,9 +140,15 @@ Component.propTypes = {
 ### 3. Naming Conventions
 - **Componentes**: PascalCase (`Badge`, `GridWrapper`, `PanelFooter`)
 - **Props**: camelCase (`margin`, `padding`, `onClick`, `textProps`)
-- **Archivos**: PascalCase para componentes, camelCase para utilities
+- **Archivos de componentes**: PascalCase (`Badge.jsx`, `Badge.styles.js`)
+- **Archivos de utilidades y scripts**: snake_case en inglés (`check_component_structure.mjs`, `common_errors.md`)
 - **Styled Components**: PascalCase (`Wrapper`, `IconItem`, `Divider`)
 - **Exports de docs**: PascalCase + "Docs" suffix (`BadgeDocs`, `DividerDocs`)
+- **Variables y funciones**: camelCase en inglés (`getColorValue`, `hasErrors`, `componentDirs`)
+- **Comentarios**: En español
+
+### 4. Idioma del Código
+**REGLA**: Todo el código (variables, funciones, nombres de archivos de soporte) debe estar en inglés. Los comentarios en el código y la documentación user-facing deben estar en español.
 
 ---
 
