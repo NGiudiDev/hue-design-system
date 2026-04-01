@@ -17,6 +17,7 @@
 - **Componentes y archivos de componente**: PascalCase (`Badge.jsx`, `Badge.styles.js`)
 - **Archivos de utilidades y scripts**: snake_case en inglés (`check_component_structure.mjs`)
 - **Variables y funciones**: camelCase en inglés (`getColorValue`, `hasErrors`)
+- **Constantes**: UPPER_SNAKE_CASE en inglés (`MAX_RETRIES`, `DEFAULT_OPTIONS`)
 - **Comentarios**: en español
 
 ## Idioma
