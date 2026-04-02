@@ -7,7 +7,7 @@
   "scripts": {
     "build-storybook": "storybook build",
     "build": "npx babel src --out-dir dist",
-    "check:components": "node scripts/check_component_structure.mjs",
+    "check:components": "node tests/scripts/check_component_structure.mjs",
     "deploy": "npm run build-storybook && gh-pages -d storybook-static",
     "docs": "storybook dev --docs",
     "lint": "npx eslint .",
