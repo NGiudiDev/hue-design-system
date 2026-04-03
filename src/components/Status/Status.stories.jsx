@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Status } from "./Status";
+import { StatusSkeleton } from "./internal/components/StatusSkeleton";
 
 const meta = {
   component: Status,
@@ -19,7 +20,11 @@ export const Playground =  {
     title: "Este es el titulo",
   },
   render: (args) => (
-    <Status {...args} />
+    <>
+      <Status {...args} />
+      
+      <StatusSkeleton margin="a-20"/>
+    </>
   ),
 };
 

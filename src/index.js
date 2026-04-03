@@ -83,6 +83,8 @@ export { Link } from "./components/Link/Link";
 
 export { Panel } from "./components/Panel/Panel";
 
+export { Status } from "./components/Status/Status";
+
 export { Steps } from "./components/Steps/Steps";
 
 export { Text } from "./components/Text/Text";
