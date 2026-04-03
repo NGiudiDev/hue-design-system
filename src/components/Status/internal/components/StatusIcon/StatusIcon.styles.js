@@ -6,14 +6,14 @@ const Wrapper = styled("div")((props) => {
   return `
     align-items: center;
     background-color: ${
-      props.invert || props.disabled
+      props.$invert || props.$disabled
         ? "transparent"
-        : props.theme.colors[props.color].main
+        : props.theme.colors[props.$color].main
     };
     border-color: ${
-      props.disabled
+      props.$disabled
         ? props.theme.colors.black.disabled
-        : props.theme.colors[props.color].main
+        : props.theme.colors[props.$color].main
     };
     border-radius: 100%;
     border-style: solid;

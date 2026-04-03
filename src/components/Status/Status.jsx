@@ -30,7 +30,7 @@ export const Status = (props) => {
         margin="r-12"
       />
 
-      <div style={{ flexGrow: 1 }}>
+      <Styles.Content>
         {title && (
           <Text color={getTextColor(props)} type="bodySemibold">
             {title}
@@ -42,7 +42,7 @@ export const Status = (props) => {
             {subtitle}
           </Text>
         )}
-      </div>
+      </Styles.Content>
     </Styles.Wrapper>
   );
 };

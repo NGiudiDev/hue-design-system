@@ -15,7 +15,7 @@ export const Skeleton = (props) => {
     return <Styles.CircleSkeleton $margin={margin} />;
   }
 
-  return <Styles.RectSkeleton height={height} $margin={margin} width={width} />;
+  return <Styles.RectSkeleton $height={height} $margin={margin} $width={width} />;
 };
 
 Skeleton.propTypes = {

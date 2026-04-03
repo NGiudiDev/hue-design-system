@@ -14,11 +14,11 @@ export const StatusSkeleton = (props) => {
     <Styles.Wrapper $margin={margin}>
       <Skeleton margin="r-12" type="circle" />
 
-      <div style={{ flexGrow: 1 }}>
+      <Styles.Content>
         <Skeleton margin="b-8" />
 
         <Skeleton width="70px" />
-      </div>
+      </Styles.Content>
     </Styles.Wrapper>
   );
 };

@@ -18,9 +18,9 @@ export const StatusIcon = (props) => {
 
   return (
     <Styles.Wrapper
-      color={color}
-      disabled={disabled}
-      invert={invert}
+      $color={color}
+      $disabled={disabled}
+      $invert={invert}
       $margin={margin}
     >
       <Icon color={getStatusIconColor(props)} name={iconName} size="major" />

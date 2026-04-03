@@ -40,10 +40,10 @@ const RectSkeleton = styled("div")((props) => {
     );
     background-size: 600px;
     border-radius: 4px;
-    height: ${props.height};
+    height: ${props.$height};
     max-width: 100%;
     opacity: 0.35;
-    width: ${props.width};
+    width: ${props.$width};
 
     ${marginProperties(props)}
   `;
