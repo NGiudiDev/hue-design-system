@@ -25,8 +25,10 @@ export const ThemeProvider = (props) => {
     }
 
     const link = document.createElement("link");
+
     link.rel = "stylesheet";
     link.href = GOOGLE_FONTS_URL;
+    
     document.head.appendChild(link);
   }, []);
   

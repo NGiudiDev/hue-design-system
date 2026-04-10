@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { StatusIcon } from "./internal/components/StatusIcon/StatusIcon";
-import { Text } from  "../Text/Text";
+import { Text } from "../Text/Text";
 
 import { Styles } from "./Status.styles";
 

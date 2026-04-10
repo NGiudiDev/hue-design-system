@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { marginProperties } from "../../utils/spacing";
 
 const ContentWrapper = styled("span")`
-  ${(props) => `   
+  ${(props) => css`   
     align-items: center;
     display: flex;
     visibility: ${props.$isLoading ? "hidden" : "visible"};

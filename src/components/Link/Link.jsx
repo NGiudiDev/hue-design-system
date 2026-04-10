@@ -13,6 +13,7 @@ export const Link = (props) => {
 
   return (
     <Styles.LinkContainer 
+      aria-label={openInNewTab ? `${children} (abre en una nueva pestaña)` : undefined}
       href={href}
       target={openInNewTab ? "_blank" : undefined}
       rel={openInNewTab ? "noopener noreferrer" : undefined}
