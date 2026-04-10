@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { Icon } from "../Icon/Icon";
 
-import { getDimentions } from "./internal/image.utils";
+import { getDimensions } from "./internal/image.utils";
 import { Styles } from "./Image.styles";
 
 export const Image = (props) => {
@@ -20,17 +20,17 @@ export const Image = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [showFallback, setShowFallback] = useState(!src);
 
-  const dimentions = getDimentions(shape, size, width, height);
+  const dimensions = getDimensions(shape, size, width, height);
 
   if (showFallback) {
     return (
       <Styles.Fallback
         aria-label={`${alt}_fallback`}
-        $height={dimentions.height}
+        $height={dimensions.height}
         $margin={margin}
         role="img"
         $shape={shape}
-        $width={dimentions.width}
+        $width={dimensions.width}
       >
         <Icon name="image" size="minor"/>
       </Styles.Fallback>
@@ -39,31 +39,31 @@ export const Image = (props) => {
 
   return (
     <Styles.Wrapper
-      $height={dimentions.height}
+      $height={dimensions.height}
       $margin={margin}
       $shape={shape}
-      $width={dimentions.width}
+      $width={dimensions.width}
     >
       <Styles.Image
         alt={alt}
-        $height={dimentions.height}
+        $height={dimensions.height}
         $isLoading={isLoading}
         onError={() => setShowFallback(true)}
         onLoad={() => setIsLoading(false)}
         $shape={shape}
         src={src}
-        $width={dimentions.width}
+        $width={dimensions.width}
       />
     </Styles.Wrapper>
   );
 };
 
 Image.propTypes = {
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   height: PropTypes.number,
   margin: PropTypes.string,
   shape: PropTypes.oneOf(["circle", "square"]),
   size: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl"]),
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   width: PropTypes.number,
 };

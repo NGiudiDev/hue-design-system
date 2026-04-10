@@ -52,6 +52,9 @@ export const Playground = {
     color: "black.main",
     margin: "a-0",
     name: "home",
+    onClick: () => {
+      alert("Icon clicked!");
+    },
     size: "major",
     spin: false,
   },

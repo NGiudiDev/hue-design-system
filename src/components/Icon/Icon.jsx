@@ -23,13 +23,24 @@ export const Icon = (props) => {
     return null;
   }
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onClick(event);
+    }
+  };
+
   return (
     <Styles.IconWrapper
+      aria-label={onClick ? name : undefined}
       className={className}
       $margin={margin}
       onClick={onClick}
+      onKeyDown={onClick ? handleKeyDown : undefined}
+      role={onClick ? "button" : undefined}
       $size={size}
       $spin={spin}
+      tabIndex={onClick ? 0 : undefined}
     >
       <Styles.IconItem
         $color={color}

@@ -8,7 +8,7 @@ import { SIZE_HEIGHTS, SIZE_WIDTHS } from "./image.consts";
  * @param {number} height - Explicit height of the image. If 0, the default value according to the size is used.
  * @returns {{ height: number, width: number }} Object with the final dimensions of the image.
  */
-export const getDimentions = (shape, size, width, height) => {
+export const getDimensions = (shape, size, width, height) => {
   let _height = height;
   let _width = width;
   

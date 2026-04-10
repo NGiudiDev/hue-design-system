@@ -18,25 +18,31 @@ const ICON_SIZES = {
 
 //? styles declaration
 const IconItem = styled("svg")`
+  display: block;
+  fill: ${props => getColorValue(props.theme.colors, props.$color) || props.theme.colors.black.main};
   height: ${props => ICON_SIZES[props.$size]};
   width: ${props => ICON_SIZES[props.$size]};
-  fill: ${props => getColorValue(props.theme.colors, props.$color) || props.theme.colors.black.main};
-  display: block;
 `;
 
 const IconWrapper = styled("div")`
   align-items: center;
+  cursor: ${props => props.onClick ? "pointer" : "default"};
   display: inline-flex;
   height: ${props => ICON_WRAPPER_SIZES[props.$size]};
   justify-content: center;
   width: ${props => ICON_WRAPPER_SIZES[props.$size]};
-  cursor: ${props => props.onClick ? "pointer" : "default"};
   
   ${props => props.$spin && css`
     animation: ${props.theme.animations.spin} 1s linear infinite;
   `}
   
   ${props => marginProperties(props)}
+
+  &:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid ${props => props.theme.colors.highlight.main};
+    outline-offset: 2px;
+  }
 `;
 
 export const Styles = {
