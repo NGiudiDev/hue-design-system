@@ -26,14 +26,6 @@ const IconButton = styled("button")`
 
     ${marginProperties(props)}
 
-    &:hover:enabled {
-      background-color: ${props.$color === "white" 
-        ? props.theme.colors.white.middleHovered
-        : props.$color === "black"
-        ? props.theme.colors.black.middleHovered
-        : props.theme.colors.primary.hovered};
-    }
-
     &:active:enabled {
       background-color: ${props.$color === "white"
         ? props.theme.colors.white.darkPressed
@@ -49,6 +41,19 @@ const IconButton = styled("button")`
       * {
         pointer-events: none;
       }
+    }
+
+    &:focus-visible {
+      outline: 2px solid ${props => props.theme.colors.highlight.main};
+      outline-offset: 2px;
+    }
+
+    &:hover:enabled {
+      background-color: ${props.$color === "white" 
+        ? props.theme.colors.white.middleHovered
+        : props.$color === "black"
+        ? props.theme.colors.black.middleHovered
+        : props.theme.colors.primary.hovered};
     }
   `}
 `;

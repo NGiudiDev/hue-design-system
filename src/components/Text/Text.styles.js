@@ -42,22 +42,10 @@ const TextWrapper = styled("p")`
 
 const LabelWrapper = styled("label")`
   ${(props) => css`
-    display: inline-block;
     cursor: pointer;
+    display: inline-block;
     user-select: none;
-    
-    /* Improve accessibility */
-    &:focus-visible {
-      outline: 2px solid ${props.theme.colors.highlight.main};
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-    
-    /* Hover state for better UX */
-    &:hover {
-      opacity: 0.8;
-    }
-    
+
     ${textStyles(props)}
   `}
 `;

@@ -12,12 +12,18 @@ const LinkContainer = styled("a")((props) => {
     line-height: ${typographyVariant.lineHeight};
     text-decoration: underline;
 
-    &:hover {
-      color: ${props.theme.colors.link.hovered};
-    }
-
     &:active {
       color: ${props.theme.colors.link.pressed};
+    }
+    
+    &:focus-visible {
+      border-radius: 2px;
+      outline: 2px solid ${props.theme.colors.highlight.main};
+      outline-offset: 4px;
+    }
+
+    &:hover {
+      color: ${props.theme.colors.link.hovered};
     }
 
     &:visited {
