@@ -29,12 +29,19 @@ const Wrapper = styled("div")`
   box-shadow: ${(props) => props.onClick && props.theme.shadows.level1};
   box-sizing: border-box;
   cursor: ${(props) => props.onClick ? "pointer" : "default"};
+  transition: box-shadow 200ms ease;
   display: flex;
   flex-direction: column;
   width: ${(props) => props.width};
   
   ${(props) => props.$isFullHeight && `
     height: 100%;
+  `}
+
+  ${(props) => props.onClick && `
+    &:hover {
+      box-shadow: ${props.theme.shadows.level2};
+    }
   `}
   
   ${(props) => paddingProperties(props)}

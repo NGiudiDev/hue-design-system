@@ -11,6 +11,7 @@ const LinkContainer = styled("a")((props) => {
     font-weight: ${typographyVariant.weight};
     line-height: ${typographyVariant.lineHeight};
     text-decoration: underline;
+    transition: color 150ms ease;
 
     &:active {
       color: ${props.theme.colors.link.pressed};

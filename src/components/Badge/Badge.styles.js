@@ -5,6 +5,7 @@ import { getColorValue } from "../../utils/colors";
 
 const Wrapper = styled("div")`
   align-items: center;
+  animation: ${(props) => props.theme.animations.fadeIn} 250ms ease;
   background-color: ${(props) => getColorValue(props.theme.colors, props.$color)};
   border-radius: 4px;
   display: inline-flex;

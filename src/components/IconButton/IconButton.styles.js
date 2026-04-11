@@ -22,6 +22,7 @@ const IconButton = styled("button")`
     height: 38px;
     justify-content: center;
     position: relative;
+    transition: background-color 500ms ease, transform 100ms ease;
     width: 38px;
 
     ${marginProperties(props)}
@@ -32,6 +33,7 @@ const IconButton = styled("button")`
         : props.$color === "black"
         ? props.theme.colors.black.dragged
         : props.theme.colors.primary.pressed};
+      transform: scale(0.92);
     }
 
     &:disabled {

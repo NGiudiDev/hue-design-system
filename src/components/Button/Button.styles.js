@@ -28,6 +28,7 @@ const FilledButton = styled("button")`
     min-width: 64px;
     padding: 9px 20px;    
     position: relative;
+    transition: background-color 150ms ease, box-shadow 150ms ease, color 150ms ease, transform 100ms ease;
     width: ${props.$fullWidth ? "100%" : "auto"};
 
     ${marginProperties(props)}
@@ -41,6 +42,7 @@ const FilledButton = styled("button")`
       background-color: ${props.theme.colors.primary.darkPressed};
       box-shadow: ${props.theme.shadows.level3};
       color: ${props.theme.colors.white.main};
+      transform: scale(0.98);
     }
 
     &:disabled {
@@ -83,6 +85,7 @@ const OutlinedButton = styled("button")`
     min-width: 64px;
     padding: 8px 19px;
     position: relative;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 100ms ease;
     width: ${props.$fullWidth ? "100%" : "auto"};
 
     ${marginProperties(props)}
@@ -97,6 +100,7 @@ const OutlinedButton = styled("button")`
       background-color: ${props.theme.colors.primary.pressed};
       border-color: ${props.theme.colors.primary.darkPressed};
       color: ${props.theme.colors.primary.darkPressed};
+      transform: scale(0.98);
     }
 
     &:disabled {
@@ -124,6 +128,7 @@ const TextButton = styled("button")`
     min-width: 64px;
     padding: 9px 12px;
     position: relative;
+    transition: background-color 150ms ease, color 150ms ease, transform 100ms ease;
     width: ${props.$fullWidth ? "100%" : "auto"};
 
     ${marginProperties(props)}
@@ -136,6 +141,7 @@ const TextButton = styled("button")`
     &:active:enabled {
       background-color: ${props.theme.colors.primary.pressed};
       color: ${props.theme.colors.primary.darkPressed};
+      transform: scale(0.98);
     }
 
     &:disabled {

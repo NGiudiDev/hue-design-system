@@ -49,13 +49,13 @@ const meta = {
 
 // Playground interactivo para probar todas las props
 export const Playground = {
-  args: {
-    alt: "playground_image",
-    size: "sm",
-    shape: "square",
-    src: null,
+  args:{
+    alt:"playground_image",
+    size:"sm",
+    shape:"square",
+    src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVlmWueUsfk-7eDhFEOyKZAUkQVLj2fpWqSw&s",
   },
-  render: (args) => (
+  render:(args) => (
     <Image {...args} />
   ),
 };

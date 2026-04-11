@@ -16,10 +16,12 @@ const Fallback = styled("div")((props) => `
 
 const Image = styled("img")((props) => `
   border-radius: ${props.$shape === "circle" ? "50%" : "4px"};
-  display: ${props.$isLoading ? "none" : "block"};
+  display: block;
   height: ${`${props.$height}px`};
   max-width: 100%;
   object-fit: cover;
+  opacity: ${props.$isLoading ? 0 : 1};
+  transition: opacity 600ms ease;
   width: ${`${props.$width}px`};
 `);
 
