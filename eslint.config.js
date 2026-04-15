@@ -5,7 +5,7 @@ import pluginReact from "eslint-plugin-react";
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: ["dist/**", "node_modules/**", "storybook-static/**"],
+    ignores: ["dist/**", "node_modules/**", "storybook-static/**", "package-lock.json"],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
