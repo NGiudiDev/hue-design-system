@@ -2,7 +2,7 @@ import React from "react";
 
 import { LinkDocs } from "./Link.docs";
 
-import { Link } from "../Link/Link";
+import { Link } from "./Link";
 
 const meta = {
   argTypes: {
