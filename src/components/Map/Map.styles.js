@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const MapWrapper = styled("div")`
   height: ${props => props.$height};
+  position: relative;
   width: ${props => props.$width};
 
   .leaflet-container {
@@ -10,4 +11,6 @@ const MapWrapper = styled("div")`
   }
 `;
 
-export const Styles = { MapWrapper };
+export const Styles = {
+  MapWrapper,
+};

@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapProvider } from "./internal/context/MapContext";
+
+import { MarkersList } from "./internal/components/MarkersList/MarkersList";
+
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 
 import { Styles } from "./Map.styles";
 
@@ -12,22 +16,39 @@ export const Map = (props) => {
     center = [0, 0],
     enableZoom = false,
     height = "400px",
+    markers = [],
+    showList = false,
     width = "100%",
     zoom = 13,
   } = props;
 
   return (
-    <Styles.MapWrapper $height={height} $width={width}>
-      <MapContainer center={center} zoom={zoom} scrollWheelZoom={enableZoom}>
-        <TileLayer
-          attribution='Map data &copy; <a href="https://www.google.com/maps/">Google Maps</a>'
-          maxNativeZoom={20}
-          maxZoom={20}
-          subdomains={["0", "1", "2", "3"]}
-          url="https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
-        />
-      </MapContainer>
-    </Styles.MapWrapper>
+    <MapProvider>
+      <Styles.MapWrapper $height={height} $width={width}>
+        {/* Listado de Marcadores */}
+        {showList && (
+          <MarkersList markers={markers} />
+        )}
+
+        {/* Mapa de leaflet */}
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={enableZoom}>
+          <TileLayer
+            attribution='Map data &copy; <a href="https://www.google.com/maps/">Google Maps</a>'
+            maxNativeZoom={20}
+            maxZoom={20}
+            subdomains={["0", "1", "2", "3"]}
+            url="https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+          />
+
+          {markers.map((marker) => (
+            <Marker
+              key={`map-marker-${marker.position[0]}-${marker.position[1]}`}
+              position={marker.position}
+            />
+          ))}
+        </MapContainer>
+      </Styles.MapWrapper>
+    </MapProvider>
   );
 };
 
@@ -35,6 +56,13 @@ Map.propTypes = {
   center: PropTypes.arrayOf(PropTypes.number),
   enableZoom: PropTypes.bool,
   height: PropTypes.string,
+  markers: PropTypes.arrayOf(
+    PropTypes.shape({
+      listItem: PropTypes.node,
+      position: PropTypes.arrayOf(PropTypes.number).isRequired,
+    })
+  ),
+  showList: PropTypes.bool,
   width: PropTypes.string,
   zoom: PropTypes.number,
 };
