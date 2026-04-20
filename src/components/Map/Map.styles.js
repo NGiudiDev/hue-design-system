@@ -9,6 +9,10 @@ const MapWrapper = styled("div")`
     height: 100%;
     width: 100%;
   }
+
+  .leaflet-control-attribution {
+    display: none;
+  }
 `;
 
 export const Styles = {

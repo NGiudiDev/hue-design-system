@@ -24,34 +24,38 @@ export const Playground = {
     height: "400px",
     markers: [
       { 
+        draggable: true,
         listItem: <Text>Sucursal 1</Text>,
         position: [-34.6037, -58.3816],
       },
       { 
+        draggable: true,
         listItem: <Text>Sucursal 2</Text>,
         position: [-34.6118, -58.3960],
       },
-      { 
+      {
+        draggable: true,
         listItem: <Text>Sucursal 3</Text>,
         position: [-34.5950, -58.3700],
       },
       { 
+        draggable: true,
         listItem: <Text>Sucursal 4</Text>,
         position: [-34.6200, -58.3650],
       },
-      { 
+      {
         listItem: <Text>Sucursal 5</Text>,
         position: [-34.5880, -58.4100],
       },
-      { 
+      {
         listItem: <Text>Sucursal 6</Text>,
         position: [-34.6300, -58.4200],
       },
-      { 
+      {
         listItem: <Text>Sucursal 7</Text>,
         position: [-34.5750, -58.3500],
       },
-      { 
+      {
         listItem: <Text>Sucursal 8</Text>,
         position: [-34.6150, -58.3400],
       },
