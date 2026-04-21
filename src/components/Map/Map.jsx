@@ -5,11 +5,12 @@ import { MapProvider } from "./internal/context/MapContext";
 
 import { MarkersList } from "./internal/components/MarkersList/MarkersList";
 
-import { MapContainer, Marker, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 import { Styles } from "./Map.styles";
 
 import "leaflet/dist/leaflet.css";
+import { CustonMarket } from "./internal/components/CustonMarket";
 
 export const Map = (props) => {
   const {
@@ -41,19 +42,10 @@ export const Map = (props) => {
           />
 
           {markers.map((marker) => (
-            <Marker
-              draggable={marker.draggable}
+            <CustonMarket
               key={`map-marker-${marker.position[0]}-${marker.position[1]}`}
-              position={marker.position}
-              onDrag={(event) => {
-                const { lat, lng } = event.target.getLatLng();
-                marker.position = [lat, lng];
-              }}
-            >
-              {marker.listItem && (
-                <Tooltip>{marker.listItem}</Tooltip>
-              )}
-            </Marker>
+              marker={marker}
+            />
           ))}
         </MapContainer>
       </Styles.MapWrapper>

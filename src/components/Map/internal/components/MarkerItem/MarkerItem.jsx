@@ -15,7 +15,7 @@ export const MarkerItem = (props) => {
 
   if (marker.listItem) {
     return (
-      <Styles.MarkerItem isSelected={marker === ctx.markerSelected} onClick={onClick}>
+      <Styles.MarkerItem $isSelected={marker === ctx.markerSelected} onClick={onClick}>
         {marker.listItem}
       </Styles.MarkerItem>
     );
