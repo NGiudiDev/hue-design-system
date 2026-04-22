@@ -26,6 +26,7 @@ export const MarkerItem = (props) => {
 
 MarkerItem.propTypes = {
   marker: PropTypes.shape({
+    draggable: PropTypes.bool,
     listItem: PropTypes.node,
     position: PropTypes.arrayOf(PropTypes.number).isRequired,
   }),

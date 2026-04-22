@@ -3,6 +3,8 @@ import React from "react";
 import { Map } from "./Map";
 import { Text } from "../Text/Text";
 
+import pinLocation from "../../assets/animations/pin_location.json";
+
 const meta = {
   argTypes: {
     
@@ -56,6 +58,7 @@ export const Playground = {
       {
         draggable: true,
         //listItem: <Text>Sucursal 7</Text>,
+        lottieIcon: pinLocation,
         position: [-34.5750, -58.3500],
       },
       {
