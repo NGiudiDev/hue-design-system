@@ -38,7 +38,7 @@ export const MapDocs = () => {
           </Text>
 
           <Text>
-            La prop <Text type="bodySemibold">showList</Text> activa un panel lateral que lista todos los marcadores usando el nodo React provisto en <Text type="bodySemibold">listItem</Text>. Esto facilita la navegación cuando hay múltiples puntos en el mapa.
+            La prop <Text as="span" type="bodySemibold">showList</Text> activa un panel lateral que lista todos los marcadores usando el nodo React provisto en <Text as="span" type="bodySemibold">listItem</Text>. Esto facilita la navegación cuando hay múltiples puntos en el mapa.
           </Text>
         </Panel.Wrapper>
 
@@ -48,7 +48,7 @@ export const MapDocs = () => {
           </Text>
 
           <Text>
-            El mapa acepta <Text type="bodySemibold">width</Text> y <Text type="bodySemibold">height</Text> como strings CSS (ej: &apos;100%&apos;, &apos;400px&apos;), permitiendo adaptarlo a cualquier contenedor del layout.
+            El mapa acepta <Text as="span" type="bodySemibold">width</Text> y <Text as="span" type="bodySemibold">height</Text> como strings CSS (ej: &apos;100%&apos;, &apos;400px&apos;), permitiendo adaptarlo a cualquier contenedor del layout.
           </Text>
         </Panel.Wrapper>
 
@@ -58,7 +58,7 @@ export const MapDocs = () => {
           </Text>
 
           <Text>
-            Por defecto el scroll del mouse no controla el zoom para evitar interferir con el scroll de la página. Puede habilitarse con la prop <Text type="bodySemibold">enableZoom</Text> cuando sea necesaria la exploración libre del mapa.
+            Por defecto el scroll del mouse no controla el zoom para evitar interferir con el scroll de la página. Puede habilitarse con la prop <Text as="span" type="bodySemibold">enableZoom</Text> cuando sea necesaria la exploración libre del mapa.
           </Text>
         </Panel.Wrapper>
 

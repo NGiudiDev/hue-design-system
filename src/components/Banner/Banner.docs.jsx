@@ -52,16 +52,6 @@ export const BannerDocs = () => {
           </Text>
         </Panel.Wrapper>
 
-        <Panel.Wrapper margin="b-32 x-8">
-          <Text margin="b-8" type="bodySemibold">
-            Variantes de Tipo
-          </Text>
-
-          <Text>
-            Soporta cinco tipos: <Text type="bodySemibold">info</Text>, <Text type="bodySemibold">success</Text>, <Text type="bodySemibold">warning</Text>, <Text type="bodySemibold">error</Text> y <Text type="bodySemibold">highlight</Text>. Cada uno aplica automáticamente el color e ícono correspondiente.
-          </Text>
-        </Panel.Wrapper>
-
         <Text type="title">
           Propiedades
         </Text>
