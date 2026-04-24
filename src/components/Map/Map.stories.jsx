@@ -1,5 +1,7 @@
 import React from "react";
 
+import { MapDocs } from "./Map.docs";
+
 import { Map } from "./Map";
 import { Text } from "../Text/Text";
 
@@ -7,13 +9,40 @@ import pinLocation from "../../assets/animations/pin_location.json";
 
 const meta = {
   argTypes: {
-    
+    center: {
+      control: { type: "object" },
+      description: "Coordenadas iniciales del centro del mapa como array [lat, lng].",
+    },
+    enableZoom: {
+      control: { type: "boolean" },
+      description: "Habilita el zoom mediante scroll del mouse sobre el mapa.",
+    },
+    height: {
+      control: { type: "text" },
+      description: "Altura del mapa como string CSS (ej: '400px', '100%').",
+    },
+    markers: {
+      control: { type: "object" },
+      description: "Array de marcadores a mostrar en el mapa. Cada marcador requiere 'position' como [lat, lng] y opcionalmente 'listItem', 'draggable' y 'lottieIcon'.",
+    },
+    showList: {
+      control: { type: "boolean" },
+      description: "Muestra un listado lateral con el contenido 'listItem' de cada marcador.",
+    },
+    width: {
+      control: { type: "text" },
+      description: "Ancho del mapa como string CSS (ej: '100%', '600px').",
+    },
+    zoom: {
+      control: { type: "number" },
+      description: "Nivel de zoom inicial del mapa.",
+    },
   },
   component: Map,
   parameters: {
-    /* docs: {
+    docs: {
       page: MapDocs,
-    }, */
+    },
   },
   tags: ["autodocs"],
   title: "Components/Map",
