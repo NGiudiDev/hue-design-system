@@ -13,7 +13,12 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-      }
+      },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
     },
     rules: {
       "eol-last": ["error", "never"],
@@ -28,5 +33,12 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  {
+    ...pluginReact.configs.flat.recommended,
+    files: ["**/*.{jsx,tsx}"],
+  },
+  {
+    ...pluginReact.configs.flat["jsx-runtime"],
+    files: ["**/*.{jsx,tsx}"],
+  },
 ];
