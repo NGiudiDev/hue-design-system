@@ -273,46 +273,6 @@ export const TextDocs = () => {
           </Text>
         </Panel.Wrapper>
 
-        <Text margin="b-16" type="bodySemibold">
-          Contenido Editorial
-        </Text>
-
-        <Panel.Wrapper margin="b-16 x-8">
-          <Text margin="b-8">
-            Para artículos, blogs y contenido largo con tipografía optimizada para lectura.
-          </Text>
-
-          <Text as="pre" margin="b-8">
-  {`<article>
-    <Text as="h1" type="pageTitle" margin="b-16">
-      Título del Artículo
-    </Text>
-    
-    <Text type="captionRegular" 
-          color="grey.main" 
-          margin="b-24">
-      Publicado el 15 de Octubre, 2024
-    </Text>
-    
-    <Text as="p" type="bodyRegular" margin="b-16">
-      Primer párrafo del contenido...
-    </Text>
-    
-    <Text as="h2" type="title" margin="t-32 b-16">
-      Sección del Artículo
-    </Text>
-    
-    <Text as="p" type="bodyRegular" margin="b-16">
-      Más contenido del artículo...
-    </Text>
-  </article>`}
-          </Text>
-        </Panel.Wrapper>
-
-        <Text margin="b-16" type="title">
-          Buenas Prácticas
-        </Text>
-
         <Panel.Wrapper margin="b-16 x-8">
           <Text margin="b-8" type="bodySemibold">
             ✅ Recomendado

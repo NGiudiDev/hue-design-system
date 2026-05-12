@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { use } from "react";
 
 import { MapContext } from "../context/MapContext";
 
 export const useMapContext = () => {
-  return useContext(MapContext);
+  return use(MapContext);
 };

@@ -107,7 +107,7 @@ export const Playground = {
         <Form>
           <Input {...args} />
 
-          <button type="submit">Submit</button>
+          <button type="submit">Enviar formulario</button>
         </Form>
       </Formik>
 

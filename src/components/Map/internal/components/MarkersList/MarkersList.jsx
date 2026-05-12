@@ -27,7 +27,7 @@ export const MarkersList = (props) => {
       <Styles.MarkersList>
         {markers.map((marker, index) => (
           <MarkerItem
-            key={`marker-list-item-${index}`}
+            key={`marker-${marker.position[0]}-${marker.position[1]}`}
             marker={marker}
             onClick={() => ctx.setMarkerSelected(marker)}
           />

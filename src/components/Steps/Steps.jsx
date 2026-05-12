@@ -19,7 +19,7 @@ export const Steps = (props) => {
     <Styles.Wrapper $margin={margin}>
       {stepsArray.map((stepNumber, index) => {
         return (
-          <React.Fragment key={index}>
+          <React.Fragment key={`step_${stepNumber}`}>
             <Step
               isCompleted={stepNumber <= step}
               label={labels[index]}
