@@ -25,39 +25,31 @@
 /*                                                                */
 /*  ## Componentes a desarrollar...                               */
 /*                                                                */
-/*    1. Banner                                                   */
-/*    2. Breadcrumbs                                              */
-/*    3. Carrousel                                                */
-/*    4. Checkbox                                                 */
-/*    5. Collapse                                                 */
-/*    6. Dropdown                                                 */
-/*    7. Dropzone                                                 */
-/*    8. Filter                                                   */
-/*    9. Flex                                                     */
-/*   10. FloatButton                                              */
-/*   11. Hero                                                     */
-/*   12. Input                                                    */
-/*   13. Map                                                      */
-/*   14. Modal                                                    */
-/*   15. Paginate                                                 */
-/*   16. Panel                                                    */
-/*   17. PhoneInput                                               */
-/*   18. ProgressBar                                              */
-/*   19. Radio                                                    */
-/*   20. Search                                                   */
-/*   21. Select                                                   */
-/*   22. Stack                                                    */
-/*   23. Status                                                   */
-/*   24. StatusProgress                                           */
-/*   25. Steps                                                    */
-/*   26. Table                                                    */
-/*   27. Tabs                                                     */
-/*   28. Text                                                     */
-/*   29. Time                                                     */
-/*   30. Timeline                                                 */
-/*   31. Tooltip                                                  */
-/*   32. UpdatedFile                                              */
-/*   33. RatingInput                                              */
+/*    1. Breadcrumbs                                              */
+/*    2. Carrousel                                                */
+/*    3. Checkbox                                                 */
+/*    4. Collapse                                                 */
+/*    5. Dropdown                                                 */
+/*    6. Dropzone                                                 */
+/*    7. Filter                                                   */
+/*    8. FloatButton                                              */
+/*    9. Hero                                                     */
+/*   10. Input                                                    */
+/*   11. Modal                                                    */
+/*   12. Paginate                                                 */
+/*   13. PhoneInput                                               */
+/*   14. ProgressBar                                              */
+/*   15. Radio                                                    */
+/*   16. Search                                                   */
+/*   17. Select                                                   */
+/*   18. Stack                                                    */
+/*   19. StatusProgress                                           */
+/*   20. Table                                                    */
+/*   21. Time                                                     */
+/*   22. Timeline                                                 */
+/*   23. Tooltip                                                  */
+/*   24. UpdatedFile                                              */
+/*   25. RatingInput                                              */
 /*                                                                */
 /******************************************************************/
 
