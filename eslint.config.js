@@ -37,8 +37,4 @@ export default [
     ...pluginReact.configs.flat.recommended,
     files: ["**/*.{jsx,tsx}"],
   },
-  {
-    ...pluginReact.configs.flat["jsx-runtime"],
-    files: ["**/*.{jsx,tsx}"],
-  },
 ];
