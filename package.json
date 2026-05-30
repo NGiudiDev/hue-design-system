@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "description": "Design System implemented in React",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "type": "module",
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build-storybook": "storybook build",
     "build": "npx babel src --out-dir dist",

@@ -1,32 +1,54 @@
 # Hue Design System
 
-El propósito de esta librería es crear un sistema de diseño para simplificar el desarrollo de proyectos en React, utilizando la menor cantidad de dependencias posible para facilitar su mantenimiento.
+React component library with an integrated design system, built on top of **styled-components**. Designed to minimize dependencies and simplify long-term project maintenance.
 
-## Documentacion
+## Installation
 
-Este repositorio incluye una capa de documentacion orientada a asistentes de IA para mejorar consistencia y reducir retrabajo.
+```bash
+npm install @ngiudi.dev/hue-design-system
+```
 
-### Puntos de entrada
+### Required peer dependencies
 
-- AGENTS.MD
+```bash
+npm install react react-dom styled-components
+```
 
-### Guias por dominio
+## Usage
 
-- docs/ai/domains/components.md
-- docs/ai/domains/theme.md
-- docs/ai/domains/utils.md
+Wrap your application with `ThemeProvider` and use the components directly:
 
-### Plantillas y soporte operativo
+```jsx
+import { ThemeProvider, Button, Text, Flex } from "@ngiudi.dev/hue-design-system";
 
-- docs/ai/templates/component_template.md
-- docs/ai/common_errors.md
-- docs/ai/decisions.md
+function App() {
+  return (
+    <ThemeProvider>
+      <Flex direction="column" gap="16">
+        <Text type="title">Hello world</Text>
+        <Button variant="primary">Primary action</Button>
+      </Flex>
+    </ThemeProvider>
+  );
+}
+```
 
-### Validaciones
+## Spacing system
 
-Ejecuta estos comandos para validar calidad y estructura minima:
+Components use a declarative spacing system with the format `"direction-value"`:
 
-- npm run lint
-- npm run check:components
+```jsx
+// margin: all 16px
+<Box margin="a-16" />
 
-Si se agrega o cambia una convencion, debe actualizarse AGENTS.MD y docs/ai/decisions.md en el mismo PR.
+// padding: horizontal 8px, vertical 4px
+<Box padding="x-8 y-4" />
+
+// margin: top 24px, bottom 8px
+<Box margin="t-24 b-8" />
+```
+
+## Requirements
+
+- React 19+
+- styled-components 6+
