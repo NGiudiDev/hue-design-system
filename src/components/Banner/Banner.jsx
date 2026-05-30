@@ -70,11 +70,3 @@ Banner.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   type: PropTypes.oneOf(["error", "highlight", "info", "success", "warning"]),
 };
-
-Banner.defaultProps = {
-  className: null,
-  margin: "a-0",
-  description: null,
-  title: null,
-  type: "info",
-};

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 import { Icon } from "../Icon/Icon";
@@ -18,11 +18,11 @@ export const Image = (props) => {
   } = props;
 
   const [isLoading, setIsLoading] = useState(true);
-  const [showFallback, setShowFallback] = useState(!src);
+  const showFallback = useRef(!src);
 
   const dimensions = getDimensions(shape, size, width, height);
 
-  if (showFallback) {
+  if (showFallback.current) {
     return (
       <Styles.Fallback
         aria-label={`${alt}_fallback`}
@@ -48,7 +48,10 @@ export const Image = (props) => {
         alt={alt}
         $height={dimensions.height}
         $isLoading={isLoading}
-        onError={() => setShowFallback(true)}
+        onError={() => {
+          showFallback.current = true;
+          setIsLoading(false);
+        }}
         onLoad={() => setIsLoading(false)}
         $shape={shape}
         src={src}
