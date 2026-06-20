@@ -25,7 +25,7 @@ export const MarkersList = (props) => {
       <Divider />
 
       <Styles.MarkersList>
-        {markers.map((marker, index) => (
+        {markers.map((marker) => (
           <MarkerItem
             key={`marker-${marker.position[0]}-${marker.position[1]}`}
             marker={marker}

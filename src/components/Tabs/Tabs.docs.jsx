@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Canvas, Controls, Unstyled } from "@storybook/addon-docs/blocks";
 
 import { Panel } from "../Panel/Panel";

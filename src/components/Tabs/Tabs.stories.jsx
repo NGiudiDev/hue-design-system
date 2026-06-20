@@ -1,3 +1,5 @@
+import React from "react";
+
 import { TabsDocs } from "./Tabs.docs";
 
 import { Tabs } from "./Tabs";
