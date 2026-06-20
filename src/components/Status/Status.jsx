@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { StatusIcon } from "./internal/components/StatusIcon/StatusIcon";
+import { StatusSkeleton } from "./internal/components/StatusSkeleton";
 import { Text } from "../Text/Text";
 
 import { Styles } from "./Status.styles";
@@ -15,10 +16,15 @@ export const Status = (props) => {
     disabled = false,
     iconName = "camera",
     invert = false,
+    loading = false,
     margin = "a-0",
     subtitle = null,
     title = null,
   } = props;
+
+  if (loading) {
+    return <StatusSkeleton />;
+  }
 
   return (
     <Styles.Wrapper className={className} $margin={margin}>
@@ -53,6 +59,7 @@ Status.propTypes = {
   disabled: PropTypes.bool,
   iconName: PropTypes.string,
   invert: PropTypes.bool,
+  loading: PropTypes.bool,
   margin: PropTypes.string,
   subtitle: PropTypes.node,
   title: PropTypes.string,

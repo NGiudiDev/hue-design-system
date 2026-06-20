@@ -3,7 +3,6 @@ import React from "react";
 import { StatusDocs } from "./Status.docs";
 
 import { Status } from "./Status";
-import { StatusSkeleton } from "./internal/components/StatusSkeleton";
 
 const meta = {
   argTypes: {
@@ -26,6 +25,10 @@ const meta = {
     invert: {
       control: { type: "boolean" },
       description: "Invierte los colores del ícono, mostrando borde y fondo transparente.",
+    },
+    loading: {
+      control: { type: "boolean" },
+      description: "Muestra un estado de carga, reemplazando el contenido del componente con un esqueleto de carga.",
     },
     margin: {
       control: { type: "text" },
@@ -50,25 +53,19 @@ const meta = {
   title: "Components/Status",
 };
 
-// Playground interactivo para probar todas las props
 export const Playground = {
   args: {
     color: "primary",
     disabled: false,
     iconName: "shipped",
     invert: true,
+    loading: false,
     margin: "a-20",
     subtitle: "Este es el subtitulo",
     title: "Este es el titulo",
   },
   render: (args) => (
     <Status {...args} />
-  ),
-};
-
-export const Skeleton = {
-  render: () => (
-    <StatusSkeleton margin="a-20" />
   ),
 };
 

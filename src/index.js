@@ -43,13 +43,12 @@
 /*   16. Search                                                   */
 /*   17. Select                                                   */
 /*   18. Stack                                                    */
-/*   19. StatusProgress                                           */
-/*   20. Table                                                    */
-/*   21. Time                                                     */
-/*   22. Timeline                                                 */
-/*   23. Tooltip                                                  */
-/*   24. UpdatedFile                                              */
-/*   25. RatingInput                                              */
+/*   19. Table                                                    */
+/*   20. Time                                                     */
+/*   21. Timeline                                                 */
+/*   22. Tooltip                                                  */
+/*   23. UpdatedFile                                              */
+/*   24. RatingInput                                              */
 /*                                                                */
 /******************************************************************/
 
@@ -76,6 +75,8 @@ export { Link } from "./components/Link/Link";
 export { Panel } from "./components/Panel/Panel";
 
 export { Status } from "./components/Status/Status";
+
+export { StatusProgress } from "./components/StatusProgress/StatusProgress";
 
 export { Steps } from "./components/Steps/Steps";
 

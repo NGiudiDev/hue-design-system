@@ -17,7 +17,7 @@ export const StatusSkeleton = (props) => {
       <Styles.Content>
         <Skeleton margin="b-8" />
 
-        <Skeleton width="70px" />
+        <Skeleton width="60%" />
       </Styles.Content>
     </Styles.Wrapper>
   );
